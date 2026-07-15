@@ -1,0 +1,3050 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitattributes
+.gitignore
+.mvn/wrapper/maven-wrapper.properties
+mvnw
+mvnw.cmd
+pom.xml
+src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/in/ApiKeyResponse.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/in/ApiKeyResponseMapper.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/in/ApiKeyRestController.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/out/ApiKeyEntity.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/out/ApiKeyEntityMapper.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/out/ApiKeyJpaRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/out/ApiKeyMapper.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/out/ApiKeySqlRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/core/ports/in/CreateApiKeyUseCase.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/core/ports/in/DeleteApiKeyUseCase.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/core/ports/in/ReadApiKeyUseCase.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/core/ports/out/ApiKeyRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/core/services/CreateApiKeyService.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/core/services/DeleteApiKeyService.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/core/services/ReadApiKeyService.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/domains/ApiKey.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/domains/ApiKeyNotFoundException.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/domains/Role.java
+src/main/java/org/bkd/social_media_scheduler_api/api_key/frameworks/ApiKeyConfiguration.java
+src/main/java/org/bkd/social_media_scheduler_api/application/adapters/in/ApplicationResponse.java
+src/main/java/org/bkd/social_media_scheduler_api/application/adapters/in/ApplicationResponseMapper.java
+src/main/java/org/bkd/social_media_scheduler_api/application/adapters/in/ApplicationRestController.java
+src/main/java/org/bkd/social_media_scheduler_api/application/adapters/in/CreateApplicationRequest.java
+src/main/java/org/bkd/social_media_scheduler_api/application/adapters/out/ApplicationEntity.java
+src/main/java/org/bkd/social_media_scheduler_api/application/adapters/out/ApplicationEntityMapper.java
+src/main/java/org/bkd/social_media_scheduler_api/application/adapters/out/ApplicationJpaRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/application/adapters/out/ApplicationMapper.java
+src/main/java/org/bkd/social_media_scheduler_api/application/adapters/out/ApplicationSqlRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/application/core/ports/in/CreateApplicationUseCase.java
+src/main/java/org/bkd/social_media_scheduler_api/application/core/ports/in/ReadApplicationUseCase.java
+src/main/java/org/bkd/social_media_scheduler_api/application/core/ports/out/ApplicationRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/application/core/services/CreateApplicationService.java
+src/main/java/org/bkd/social_media_scheduler_api/application/core/services/ReadApplicationService.java
+src/main/java/org/bkd/social_media_scheduler_api/application/domain/Application.java
+src/main/java/org/bkd/social_media_scheduler_api/application/frameworks/ApplicationConfiguration.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/in/AuthorizationUrlResponse.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/in/OAuth2RestController.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/state/StateEntity.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/state/StateEntityMapper.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/state/StateJpaRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/state/StateMapper.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/state/StateSqlRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token_managers/TiktokTokenManager.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token/TokenEntity.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token/TokenEntityMapper.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token/TokenJpaRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token/TokenMapper.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token/TokenSqlRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/ports/in/HandleCallbackUseCase.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/ports/in/InitiateOAuth2UseCase.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/ports/out/StateRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/ports/out/TokenManager.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/ports/out/TokenRepository.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/services/AuthorizationUrlBuilder.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/services/OAuth2CallbackHandler.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/services/OAuth2Initializer.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/services/OAuth2Utils.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/services/TiktokAuthorizationUrlBuilder.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/platform/Platform.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/platform/UnsupportedPlatformException.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/state/State.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/state/StateExpiredException.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/state/StateNotFoundException.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/token/Token.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/token/TokenExchangeException.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/token/TokenNotFoundException.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/frameworks/OAuth2Configuration.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/frameworks/Platform.java
+src/main/java/org/bkd/social_media_scheduler_api/oauth2/frameworks/PlatformsProperties.java
+src/main/java/org/bkd/social_media_scheduler_api/security/AuthenticationContext.java
+src/main/java/org/bkd/social_media_scheduler_api/security/AuthenticationFilter.java
+src/main/java/org/bkd/social_media_scheduler_api/security/AuthorizationFilter.java
+src/main/java/org/bkd/social_media_scheduler_api/security/SecurityConfiguration.java
+src/main/java/org/bkd/social_media_scheduler_api/security/TenantContext.java
+src/main/java/org/bkd/social_media_scheduler_api/SocialMediaSchedulerApi.java
+src/main/resources/application.properties
+src/main/resources/db/changelog/db.changelog-master.yaml
+src/main/resources/db/changelog/v1/db-initialization.xml
+src/main/resources/db/changelog/v1/insert-application-and-api-key.xml
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/in/ApiKeyResponse.java">
+package org.bkd.social_media_scheduler_api.api_key.adapters.in;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.bkd.social_media_scheduler_api.api_key.domains.Role;
+
+import java.util.UUID;
+
+@Getter
+@Setter
+public class ApiKeyResponse {
+
+  private UUID id;
+
+  private Role role;
+
+  private String value;
+
+  private String description;
+
+  private UUID applicationId;
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/in/ApiKeyResponseMapper.java">
+package org.bkd.social_media_scheduler_api.api_key.adapters.in;
+
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
+
+import java.util.List;
+
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface ApiKeyResponseMapper {
+
+  ApiKeyResponse toApiKeyResponse(ApiKey apiKey);
+
+  List<ApiKeyResponse> toApiKeyResponses(List<ApiKey> apiKeys);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/out/ApiKeySqlRepository.java">
+package org.bkd.social_media_scheduler_api.api_key.adapters.out;
+
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.out.ApiKeyRepository;
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+
+@Repository
+@Transactional
+@RequiredArgsConstructor
+public class ApiKeySqlRepository implements ApiKeyRepository {
+
+  private final ApiKeyMapper apiKeyMapper;
+  private final ApiKeyEntityMapper apiKeyEntityMapper;
+  private final ApiKeyJpaRepository apiKeyJpaRepository;
+
+  @Override
+  public ApiKey save(ApiKey apiKey) {
+    ApiKeyEntity newApiKeyEntity = apiKeyEntityMapper.toApiKeyEntity(apiKey);
+    newApiKeyEntity = apiKeyJpaRepository.save(newApiKeyEntity);
+    return apiKeyMapper.toApiKey(newApiKeyEntity);
+  }
+
+  @Override
+  public void deleteByIdAndApplicationId(UUID apiKeyId, UUID applicationId) {
+    apiKeyJpaRepository.deleteByIdAndApplicationId(apiKeyId, applicationId);
+  }
+
+  @Override
+  public Optional<ApiKey> findByValueAndApplicationId(String value, UUID applicationId) {
+    return apiKeyJpaRepository.findByValueAndApplicationId(value, applicationId).map(apiKeyMapper::toApiKey);
+  }
+
+  @Override
+  public List<ApiKey> findAllByApplicationId(UUID applicationId) {
+    List<ApiKeyEntity> apiKeyEntities = apiKeyJpaRepository.findAllByApplicationId(applicationId);
+    return apiKeyMapper.toApiKeys(apiKeyEntities);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/domains/ApiKeyNotFoundException.java">
+package org.bkd.social_media_scheduler_api.api_key.domains;
+
+public class ApiKeyNotFoundException extends Exception {
+
+  public ApiKeyNotFoundException() {
+    super("API key not found");
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/domains/Role.java">
+package org.bkd.social_media_scheduler_api.api_key.domains;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@Getter
+@RequiredArgsConstructor
+public enum Role {
+
+  ADMIN(2),
+  USER(1);
+
+  private final int weight;
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/adapters/in/ApplicationResponse.java">
+package org.bkd.social_media_scheduler_api.application.adapters.in;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.UUID;
+
+@Getter
+@Setter
+public class ApplicationResponse {
+
+  private UUID id;
+
+  private String name;
+
+  private String description;
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/adapters/in/ApplicationResponseMapper.java">
+package org.bkd.social_media_scheduler_api.application.adapters.in;
+
+import org.bkd.social_media_scheduler_api.application.domain.Application;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
+
+import java.util.List;
+
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface ApplicationResponseMapper {
+
+  ApplicationResponse toApplicationResponse(Application application);
+
+  List<ApplicationResponse> toApplicationResponses(List<Application> applications);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/adapters/in/CreateApplicationRequest.java">
+package org.bkd.social_media_scheduler_api.application.adapters.in;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class CreateApplicationRequest {
+
+  @NotBlank
+  private String name;
+
+  @NotBlank
+  private String description;
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/adapters/out/ApplicationSqlRepository.java">
+package org.bkd.social_media_scheduler_api.application.adapters.out;
+
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.application.core.ports.out.ApplicationRepository;
+import org.bkd.social_media_scheduler_api.application.domain.Application;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Repository
+@Transactional
+@RequiredArgsConstructor
+public class ApplicationSqlRepository implements ApplicationRepository {
+
+  private final ApplicationMapper applicationMapper;
+  private final ApplicationEntityMapper applicationEntityMapper;
+  private final ApplicationJpaRepository applicationJpaRepository;
+
+  @Override
+  public Application save(Application application) {
+    ApplicationEntity applicationEntity = applicationEntityMapper.toApplicationEntity(application);
+    applicationEntity = applicationJpaRepository.save(applicationEntity);
+    return applicationMapper.toApplication(applicationEntity);
+  }
+
+  @Override
+  public List<Application> findAll() {
+    List<ApplicationEntity> applicationEntities = applicationJpaRepository.findAll();
+    return applicationMapper.toApplications(applicationEntities);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/in/AuthorizationUrlResponse.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.in;
+
+public record AuthorizationUrlResponse(String url) {
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/state/StateSqlRepository.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.out.state;
+
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.StateRepository;
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.State;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
+import java.util.UUID;
+
+@Repository
+@Transactional
+@RequiredArgsConstructor
+public class StateSqlRepository implements StateRepository {
+
+  private final StateMapper stateMapper;
+  private final StateEntityMapper stateEntityMapper;
+  private final StateJpaRepository stateJpaRepository;
+
+  @Override
+  public State save(State state) {
+    StateEntity newStateEntity = stateEntityMapper.toStateEntity(state);
+    newStateEntity = stateJpaRepository.save(newStateEntity);
+    return stateMapper.toState(newStateEntity);
+  }
+
+  @Override
+  public Optional<State> findByValueAndApplicationId(String value, UUID applicationId) {
+    return stateJpaRepository.findByValueAndApplicationId(value, applicationId).map(stateMapper::toState);
+  }
+
+  @Override
+  public void deleteByIdAndApplicationId(UUID stateId, UUID applicationId) {
+    stateJpaRepository.deleteByIdAndApplicationId(stateId, applicationId);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token/TokenSqlRepository.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.out.token;
+
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.TokenRepository;
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.Token;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+@Repository
+@Transactional
+@RequiredArgsConstructor
+public class TokenSqlRepository implements TokenRepository {
+
+  private final TokenMapper tokenMapper;
+  private final TokenEntityMapper tokenEntityMapper;
+  private final TokenJpaRepository tokenJpaRepository;
+
+  @Override
+  public Token save(Token token) {
+    TokenEntity newTokenEntity = tokenEntityMapper.toTokenEntity(token);
+    newTokenEntity = tokenJpaRepository.save(newTokenEntity);
+    return tokenMapper.toToken(newTokenEntity);
+  }
+
+  @Override
+  public void deleteByIdAndApplicationId(UUID tokenId, UUID applicationId) {
+    tokenJpaRepository.deleteByIdAndApplicationId(tokenId, applicationId);
+  }
+
+  @Override
+  public Optional<Token> findByIdAndApplicationId(UUID tokenId, UUID applicationId) {
+    return tokenJpaRepository.findByIdAndApplicationId(tokenId, applicationId).map(tokenMapper::toToken);
+  }
+
+  @Override
+  public List<Token> findAllByApplicationId(UUID applicationId) {
+    List<TokenEntity> oAuthTokenEntities = tokenJpaRepository.findAllByApplicationId(applicationId);
+    return tokenMapper.toTokens(oAuthTokenEntities);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/ports/in/HandleCallbackUseCase.java">
+package org.bkd.social_media_scheduler_api.oauth2.core.ports.in;
+
+
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.UnsupportedPlatformException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateExpiredException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateNotFoundException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.Token;
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.TokenExchangeException;
+
+import java.util.UUID;
+
+public interface HandleCallbackUseCase {
+
+  Token handleOAuth2Callback(String code, String scopes, String state, Platform platform, UUID applicationId) throws
+                                                                                                              UnsupportedPlatformException,
+                                                                                                              StateNotFoundException,
+                                                                                                              TokenExchangeException,
+                                                                                                              StateExpiredException;
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/platform/UnsupportedPlatformException.java">
+package org.bkd.social_media_scheduler_api.oauth2.domains.platform;
+
+public class UnsupportedPlatformException extends Exception {
+
+  public UnsupportedPlatformException(Platform platform) {
+    super("Unsupported platform: " + platform);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/state/State.java">
+package org.bkd.social_media_scheduler_api.oauth2.domains.state;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import java.time.Instant;
+import java.util.UUID;
+
+@Getter
+@Setter
+public class State {
+
+  private UUID id;
+
+  private String value;
+
+  private Instant createdAt;
+
+  private UUID applicationId;
+
+  public State(String value, UUID applicationId) {
+    this.id = UUID.randomUUID();
+    this.value = value;
+    this.createdAt = Instant.now();
+    this.applicationId = applicationId;
+  }
+
+  /**
+   * true if state is younger than 5 mins else false
+   */
+  public boolean isExpired() {
+    Instant now = Instant.now();
+    Instant expiresAt = createdAt.plusSeconds(300); // 5 mins
+    return expiresAt.isBefore(now);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/state/StateExpiredException.java">
+package org.bkd.social_media_scheduler_api.oauth2.domains.state;
+
+public class StateExpiredException extends Exception {
+
+  public StateExpiredException() {
+    super("State has expired");
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/state/StateNotFoundException.java">
+package org.bkd.social_media_scheduler_api.oauth2.domains.state;
+
+public class StateNotFoundException extends Exception {
+
+  public StateNotFoundException() {
+    super("State not found");
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/token/Token.java">
+package org.bkd.social_media_scheduler_api.oauth2.domains.token;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
+
+import java.time.Instant;
+import java.util.UUID;
+
+@Getter
+@Setter
+public class Token {
+
+  private UUID id;
+
+  private String openId;
+
+  private String scope;
+
+  private String accessToken;
+
+  private String refreshToken;
+
+  private Instant accessTokenExpiresAt;
+
+  private Instant refreshTokenExpiresAt;
+
+  private String tokenType;
+
+  private Platform platform;
+
+  private Instant createdAt;
+
+  private UUID applicationId;
+
+  public Token(String openId,
+               String scope,
+               String accessToken,
+               String refreshToken,
+               Instant accessTokenExpiresAt,
+               Instant refreshTokenExpiresAt,
+               String tokenType,
+               Platform platform,
+               UUID applicationId) {
+    
+    this.id = UUID.randomUUID();
+    this.openId = openId;
+    this.scope = scope;
+    this.accessToken = accessToken;
+    this.refreshToken = refreshToken;
+    this.accessTokenExpiresAt = accessTokenExpiresAt;
+    this.refreshTokenExpiresAt = refreshTokenExpiresAt;
+    this.tokenType = tokenType;
+    this.platform = platform;
+    this.createdAt = Instant.now();
+    this.applicationId = applicationId;
+  }
+
+  /**
+   * true if access token is still valid else false
+   */
+  public boolean canBeUsed() {
+    return Instant.now().isBefore(accessTokenExpiresAt);
+  }
+
+  /**
+   * true if refresh token is still valid else false
+   */
+  public boolean canBeRefreshed() {
+    return Instant.now().isBefore(refreshTokenExpiresAt);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/token/TokenExchangeException.java">
+package org.bkd.social_media_scheduler_api.oauth2.domains.token;
+
+public class TokenExchangeException extends Exception {
+
+  public TokenExchangeException(String message) {
+    super(message);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/token/TokenNotFoundException.java">
+package org.bkd.social_media_scheduler_api.oauth2.domains.token;
+
+public class TokenNotFoundException extends Exception {
+
+  public TokenNotFoundException() {
+    super("Token not found");
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/security/AuthenticationContext.java">
+package org.bkd.social_media_scheduler_api.security;
+
+
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+
+public class AuthenticationContext {
+
+  private static final ThreadLocal<ApiKey> apiKey = new ThreadLocal<>();
+
+  public static ApiKey getAuthentication() {
+    if (AuthenticationContext.apiKey.get() == null) {
+      throw new IllegalStateException();
+    }
+
+    return AuthenticationContext.apiKey.get();
+  }
+
+  public static void setAuthentication(ApiKey apiKey) {
+    AuthenticationContext.apiKey.set(apiKey);
+  }
+
+  public static void clear() {
+    AuthenticationContext.apiKey.remove();
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/security/AuthenticationFilter.java">
+package org.bkd.social_media_scheduler_api.security;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.in.ReadApiKeyUseCase;
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKeyNotFoundException;
+import org.springframework.stereotype.Component;
+import org.springframework.util.AntPathMatcher;
+import org.springframework.util.PathMatcher;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
+import java.util.UUID;
+
+import static org.springframework.util.StringUtils.hasText;
+
+
+@Component
+@RequiredArgsConstructor
+public class AuthenticationFilter extends OncePerRequestFilter {
+
+  private final static String API_KEY_HEADER = "X-API-KEY";
+  private final static String TENANT_HEADER = "X-APPLICATION-ID";
+
+  private final static PathMatcher pathMatcher = new AntPathMatcher();
+
+  private final ReadApiKeyUseCase apiKeyReadService;
+
+  @Override
+  protected void doFilterInternal(HttpServletRequest request,
+                                  HttpServletResponse response,
+                                  FilterChain filterChain) throws ServletException, IOException {
+
+    try {
+      String apiKey = extractApiKeyFromHeaders(request);
+      UUID tenant = extractTenantFromHeaders(request);
+      ApiKey apiKey_ = apiKeyReadService.readApiKey(apiKey, tenant);
+      AuthenticationContext.setAuthentication(apiKey_);
+      filterChain.doFilter(request, response);
+    } catch (IllegalArgumentException | NullPointerException e) {
+      response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+    } catch (ApiKeyNotFoundException e) {
+      response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+    } finally {
+      AuthenticationContext.clear();
+    }
+  }
+
+  private String extractApiKeyFromHeaders(HttpServletRequest request) {
+    String apiKey = request.getHeader(API_KEY_HEADER);
+
+    if (!hasText(apiKey)) {
+      throw new NullPointerException("API key is null or empty");
+    }
+
+    return apiKey;
+  }
+
+  private UUID extractTenantFromHeaders(HttpServletRequest request) {
+    String tenant = request.getHeader(TENANT_HEADER);
+
+    if (!hasText(tenant)) {
+      throw new NullPointerException("Tenant is null or empty");
+    }
+
+    try {
+      return UUID.fromString(tenant);
+    } catch (IllegalArgumentException e) {
+      throw new IllegalArgumentException("Tenant ID is not a valid UUID");
+    }
+  }
+
+  @Override
+  protected boolean shouldNotFilter(HttpServletRequest request) {
+    String uri = request.getRequestURI();
+    return pathMatcher.match("/api/login/oauth/code/**", uri);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/security/AuthorizationFilter.java">
+package org.bkd.social_media_scheduler_api.security;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+import org.springframework.stereotype.Component;
+import org.springframework.util.AntPathMatcher;
+import org.springframework.util.PathMatcher;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
+
+import static org.bkd.social_media_scheduler_api.api_key.domains.Role.ADMIN;
+import static org.bkd.social_media_scheduler_api.security.SecurityConfiguration.ADMIN_BASE_PATH;
+
+@Component
+public class AuthorizationFilter extends OncePerRequestFilter {
+
+  private final static PathMatcher pathMatcher = new AntPathMatcher();
+
+  @Override
+  protected void doFilterInternal(HttpServletRequest request,
+                                  HttpServletResponse response,
+                                  FilterChain filterChain) throws ServletException, IOException {
+
+    ApiKey apiKey = AuthenticationContext.getAuthentication();
+
+    if (apiKey.getRole().getWeight() >= ADMIN.getWeight()) {
+      filterChain.doFilter(request, response);
+    } else {
+      response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Insufficient rights to access this resource");
+    }
+  }
+
+  @Override
+  protected boolean shouldNotFilter(HttpServletRequest request) {
+    String uri = request.getRequestURI();
+    return !pathMatcher.match(ADMIN_BASE_PATH + "/**", uri);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/security/SecurityConfiguration.java">
+package org.bkd.social_media_scheduler_api.security;
+
+public class SecurityConfiguration {
+
+  public final static String BASE_PATH = "/api";
+  public final static String ADMIN_BASE_PATH = BASE_PATH + "/admin";
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/security/TenantContext.java">
+package org.bkd.social_media_scheduler_api.security;
+
+import java.util.UUID;
+
+public class TenantContext {
+
+  public static UUID getTenant() {
+    return AuthenticationContext.getAuthentication().getApplicationId();
+  }
+}
+</file>
+
+<file path=".gitattributes">
+/mvnw text eol=lf
+*.cmd text eol=crlf
+</file>
+
+<file path=".gitignore">
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+</file>
+
+<file path=".mvn/wrapper/maven-wrapper.properties">
+wrapperVersion=3.3.4
+distributionType=only-script
+distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.16/apache-maven-3.9.16-bin.zip
+</file>
+
+<file path="mvnw">
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Apache Maven Wrapper startup batch script, version 3.3.4
+#
+# Optional ENV vars
+# -----------------
+#   JAVA_HOME - location of a JDK home dir, required when download maven via java source
+#   MVNW_REPOURL - repo url base for downloading maven distribution
+#   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+#   MVNW_VERBOSE - true: enable verbose log; debug: trace the mvnw script; others: silence the output
+# ----------------------------------------------------------------------------
+
+set -euf
+[ "${MVNW_VERBOSE-}" != debug ] || set -x
+
+# OS specific support.
+native_path() { printf %s\\n "$1"; }
+case "$(uname)" in
+CYGWIN* | MINGW*)
+  [ -z "${JAVA_HOME-}" ] || JAVA_HOME="$(cygpath --unix "$JAVA_HOME")"
+  native_path() { cygpath --path --windows "$1"; }
+  ;;
+esac
+
+# set JAVACMD and JAVACCMD
+set_java_home() {
+  # For Cygwin and MinGW, ensure paths are in Unix format before anything is touched
+  if [ -n "${JAVA_HOME-}" ]; then
+    if [ -x "$JAVA_HOME/jre/sh/java" ]; then
+      # IBM's JDK on AIX uses strange locations for the executables
+      JAVACMD="$JAVA_HOME/jre/sh/java"
+      JAVACCMD="$JAVA_HOME/jre/sh/javac"
+    else
+      JAVACMD="$JAVA_HOME/bin/java"
+      JAVACCMD="$JAVA_HOME/bin/javac"
+
+      if [ ! -x "$JAVACMD" ] || [ ! -x "$JAVACCMD" ]; then
+        echo "The JAVA_HOME environment variable is not defined correctly, so mvnw cannot run." >&2
+        echo "JAVA_HOME is set to \"$JAVA_HOME\", but \"\$JAVA_HOME/bin/java\" or \"\$JAVA_HOME/bin/javac\" does not exist." >&2
+        return 1
+      fi
+    fi
+  else
+    JAVACMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v java
+    )" || :
+    JAVACCMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v javac
+    )" || :
+
+    if [ ! -x "${JAVACMD-}" ] || [ ! -x "${JAVACCMD-}" ]; then
+      echo "The java/javac command does not exist in PATH nor is JAVA_HOME set, so mvnw cannot run." >&2
+      return 1
+    fi
+  fi
+}
+
+# hash string like Java String::hashCode
+hash_string() {
+  str="${1:-}" h=0
+  while [ -n "$str" ]; do
+    char="${str%"${str#?}"}"
+    h=$(((h * 31 + $(LC_CTYPE=C printf %d "'$char")) % 4294967296))
+    str="${str#?}"
+  done
+  printf %x\\n $h
+}
+
+verbose() { :; }
+[ "${MVNW_VERBOSE-}" != true ] || verbose() { printf %s\\n "${1-}"; }
+
+die() {
+  printf %s\\n "$1" >&2
+  exit 1
+}
+
+trim() {
+  # MWRAPPER-139:
+  #   Trims trailing and leading whitespace, carriage returns, tabs, and linefeeds.
+  #   Needed for removing poorly interpreted newline sequences when running in more
+  #   exotic environments such as mingw bash on Windows.
+  printf "%s" "${1}" | tr -d '[:space:]'
+}
+
+scriptDir="$(dirname "$0")"
+scriptName="$(basename "$0")"
+
+# parse distributionUrl and optional distributionSha256Sum, requires .mvn/wrapper/maven-wrapper.properties
+while IFS="=" read -r key value; do
+  case "${key-}" in
+  distributionUrl) distributionUrl=$(trim "${value-}") ;;
+  distributionSha256Sum) distributionSha256Sum=$(trim "${value-}") ;;
+  esac
+done <"$scriptDir/.mvn/wrapper/maven-wrapper.properties"
+[ -n "${distributionUrl-}" ] || die "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"
+
+case "${distributionUrl##*/}" in
+maven-mvnd-*bin.*)
+  MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/
+  case "${PROCESSOR_ARCHITECTURE-}${PROCESSOR_ARCHITEW6432-}:$(uname -a)" in
+  *AMD64:CYGWIN* | *AMD64:MINGW*) distributionPlatform=windows-amd64 ;;
+  :Darwin*x86_64) distributionPlatform=darwin-amd64 ;;
+  :Darwin*arm64) distributionPlatform=darwin-aarch64 ;;
+  :Linux*x86_64*) distributionPlatform=linux-amd64 ;;
+  *)
+    echo "Cannot detect native platform for mvnd on $(uname)-$(uname -m), use pure java version" >&2
+    distributionPlatform=linux-amd64
+    ;;
+  esac
+  distributionUrl="${distributionUrl%-bin.*}-$distributionPlatform.zip"
+  ;;
+maven-mvnd-*) MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/ ;;
+*) MVN_CMD="mvn${scriptName#mvnw}" _MVNW_REPO_PATTERN=/org/apache/maven/ ;;
+esac
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+[ -z "${MVNW_REPOURL-}" ] || distributionUrl="$MVNW_REPOURL$_MVNW_REPO_PATTERN${distributionUrl#*"$_MVNW_REPO_PATTERN"}"
+distributionUrlName="${distributionUrl##*/}"
+distributionUrlNameMain="${distributionUrlName%.*}"
+distributionUrlNameMain="${distributionUrlNameMain%-bin}"
+MAVEN_USER_HOME="${MAVEN_USER_HOME:-${HOME}/.m2}"
+MAVEN_HOME="${MAVEN_USER_HOME}/wrapper/dists/${distributionUrlNameMain-}/$(hash_string "$distributionUrl")"
+
+exec_maven() {
+  unset MVNW_VERBOSE MVNW_USERNAME MVNW_PASSWORD MVNW_REPOURL || :
+  exec "$MAVEN_HOME/bin/$MVN_CMD" "$@" || die "cannot exec $MAVEN_HOME/bin/$MVN_CMD"
+}
+
+if [ -d "$MAVEN_HOME" ]; then
+  verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  exec_maven "$@"
+fi
+
+case "${distributionUrl-}" in
+*?-bin.zip | *?maven-mvnd-?*-?*.zip) ;;
+*) die "distributionUrl is not valid, must match *-bin.zip or maven-mvnd-*.zip, but found '${distributionUrl-}'" ;;
+esac
+
+# prepare tmp dir
+if TMP_DOWNLOAD_DIR="$(mktemp -d)" && [ -d "$TMP_DOWNLOAD_DIR" ]; then
+  clean() { rm -rf -- "$TMP_DOWNLOAD_DIR"; }
+  trap clean HUP INT TERM EXIT
+else
+  die "cannot create temp dir"
+fi
+
+mkdir -p -- "${MAVEN_HOME%/*}"
+
+# Download and Install Apache Maven
+verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+verbose "Downloading from: $distributionUrl"
+verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+# select .zip or .tar.gz
+if ! command -v unzip >/dev/null; then
+  distributionUrl="${distributionUrl%.zip}.tar.gz"
+  distributionUrlName="${distributionUrl##*/}"
+fi
+
+# verbose opt
+__MVNW_QUIET_WGET=--quiet __MVNW_QUIET_CURL=--silent __MVNW_QUIET_UNZIP=-q __MVNW_QUIET_TAR=''
+[ "${MVNW_VERBOSE-}" != true ] || __MVNW_QUIET_WGET='' __MVNW_QUIET_CURL='' __MVNW_QUIET_UNZIP='' __MVNW_QUIET_TAR=v
+
+# normalize http auth
+case "${MVNW_PASSWORD:+has-password}" in
+'') MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+has-password) [ -n "${MVNW_USERNAME-}" ] || MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+esac
+
+if [ -z "${MVNW_USERNAME-}" ] && command -v wget >/dev/null; then
+  verbose "Found wget ... using wget"
+  wget ${__MVNW_QUIET_WGET:+"$__MVNW_QUIET_WGET"} "$distributionUrl" -O "$TMP_DOWNLOAD_DIR/$distributionUrlName" || die "wget: Failed to fetch $distributionUrl"
+elif [ -z "${MVNW_USERNAME-}" ] && command -v curl >/dev/null; then
+  verbose "Found curl ... using curl"
+  curl ${__MVNW_QUIET_CURL:+"$__MVNW_QUIET_CURL"} -f -L -o "$TMP_DOWNLOAD_DIR/$distributionUrlName" "$distributionUrl" || die "curl: Failed to fetch $distributionUrl"
+elif set_java_home; then
+  verbose "Falling back to use Java to download"
+  javaSource="$TMP_DOWNLOAD_DIR/Downloader.java"
+  targetZip="$TMP_DOWNLOAD_DIR/$distributionUrlName"
+  cat >"$javaSource" <<-END
+	public class Downloader extends java.net.Authenticator
+	{
+	  protected java.net.PasswordAuthentication getPasswordAuthentication()
+	  {
+	    return new java.net.PasswordAuthentication( System.getenv( "MVNW_USERNAME" ), System.getenv( "MVNW_PASSWORD" ).toCharArray() );
+	  }
+	  public static void main( String[] args ) throws Exception
+	  {
+	    setDefault( new Downloader() );
+	    java.nio.file.Files.copy( java.net.URI.create( args[0] ).toURL().openStream(), java.nio.file.Paths.get( args[1] ).toAbsolutePath().normalize() );
+	  }
+	}
+	END
+  # For Cygwin/MinGW, switch paths to Windows format before running javac and java
+  verbose " - Compiling Downloader.java ..."
+  "$(native_path "$JAVACCMD")" "$(native_path "$javaSource")" || die "Failed to compile Downloader.java"
+  verbose " - Running Downloader.java ..."
+  "$(native_path "$JAVACMD")" -cp "$(native_path "$TMP_DOWNLOAD_DIR")" Downloader "$distributionUrl" "$(native_path "$targetZip")"
+fi
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+if [ -n "${distributionSha256Sum-}" ]; then
+  distributionSha256Result=false
+  if [ "$MVN_CMD" = mvnd.sh ]; then
+    echo "Checksum validation is not supported for maven-mvnd." >&2
+    echo "Please disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  elif command -v sha256sum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | sha256sum -c - >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  elif command -v shasum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | shasum -a 256 -c >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  else
+    echo "Checksum validation was requested but neither 'sha256sum' or 'shasum' are available." >&2
+    echo "Please install either command, or disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  fi
+  if [ $distributionSha256Result = false ]; then
+    echo "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised." >&2
+    echo "If you updated your Maven version, you need to update the specified distributionSha256Sum property." >&2
+    exit 1
+  fi
+fi
+
+# unzip and move
+if command -v unzip >/dev/null; then
+  unzip ${__MVNW_QUIET_UNZIP:+"$__MVNW_QUIET_UNZIP"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -d "$TMP_DOWNLOAD_DIR" || die "failed to unzip"
+else
+  tar xzf${__MVNW_QUIET_TAR:+"$__MVNW_QUIET_TAR"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -C "$TMP_DOWNLOAD_DIR" || die "failed to untar"
+fi
+
+# Find the actual extracted directory name (handles snapshots where filename != directory name)
+actualDistributionDir=""
+
+# First try the expected directory name (for regular distributions)
+if [ -d "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain" ]; then
+  if [ -f "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain/bin/$MVN_CMD" ]; then
+    actualDistributionDir="$distributionUrlNameMain"
+  fi
+fi
+
+# If not found, search for any directory with the Maven executable (for snapshots)
+if [ -z "$actualDistributionDir" ]; then
+  # enable globbing to iterate over items
+  set +f
+  for dir in "$TMP_DOWNLOAD_DIR"/*; do
+    if [ -d "$dir" ]; then
+      if [ -f "$dir/bin/$MVN_CMD" ]; then
+        actualDistributionDir="$(basename "$dir")"
+        break
+      fi
+    fi
+  done
+  set -f
+fi
+
+if [ -z "$actualDistributionDir" ]; then
+  verbose "Contents of $TMP_DOWNLOAD_DIR:"
+  verbose "$(ls -la "$TMP_DOWNLOAD_DIR")"
+  die "Could not find Maven distribution directory in extracted archive"
+fi
+
+verbose "Found extracted Maven distribution directory: $actualDistributionDir"
+printf %s\\n "$distributionUrl" >"$TMP_DOWNLOAD_DIR/$actualDistributionDir/mvnw.url"
+mv -- "$TMP_DOWNLOAD_DIR/$actualDistributionDir" "$MAVEN_HOME" || [ -d "$MAVEN_HOME" ] || die "fail to move MAVEN_HOME"
+
+clean || :
+exec_maven "$@"
+</file>
+
+<file path="mvnw.cmd">
+<# : batch portion
+@REM ----------------------------------------------------------------------------
+@REM Licensed to the Apache Software Foundation (ASF) under one
+@REM or more contributor license agreements.  See the NOTICE file
+@REM distributed with this work for additional information
+@REM regarding copyright ownership.  The ASF licenses this file
+@REM to you under the Apache License, Version 2.0 (the
+@REM "License"); you may not use this file except in compliance
+@REM with the License.  You may obtain a copy of the License at
+@REM
+@REM    http://www.apache.org/licenses/LICENSE-2.0
+@REM
+@REM Unless required by applicable law or agreed to in writing,
+@REM software distributed under the License is distributed on an
+@REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+@REM KIND, either express or implied.  See the License for the
+@REM specific language governing permissions and limitations
+@REM under the License.
+@REM ----------------------------------------------------------------------------
+
+@REM ----------------------------------------------------------------------------
+@REM Apache Maven Wrapper startup batch script, version 3.3.4
+@REM
+@REM Optional ENV vars
+@REM   MVNW_REPOURL - repo url base for downloading maven distribution
+@REM   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+@REM   MVNW_VERBOSE - true: enable verbose log; others: silence the output
+@REM ----------------------------------------------------------------------------
+
+@IF "%__MVNW_ARG0_NAME__%"=="" (SET __MVNW_ARG0_NAME__=%~nx0)
+@SET __MVNW_CMD__=
+@SET __MVNW_ERROR__=
+@SET __MVNW_PSMODULEP_SAVE=%PSModulePath%
+@SET PSModulePath=
+@FOR /F "usebackq tokens=1* delims==" %%A IN (`powershell -noprofile "& {$scriptDir='%~dp0'; $script='%__MVNW_ARG0_NAME__%'; icm -ScriptBlock ([Scriptblock]::Create((Get-Content -Raw '%~f0'))) -NoNewScope}"`) DO @(
+  IF "%%A"=="MVN_CMD" (set __MVNW_CMD__=%%B) ELSE IF "%%B"=="" (echo %%A) ELSE (echo %%A=%%B)
+)
+@SET PSModulePath=%__MVNW_PSMODULEP_SAVE%
+@SET __MVNW_PSMODULEP_SAVE=
+@SET __MVNW_ARG0_NAME__=
+@SET MVNW_USERNAME=
+@SET MVNW_PASSWORD=
+@IF NOT "%__MVNW_CMD__%"=="" ("%__MVNW_CMD__%" %*)
+@echo Cannot start maven from wrapper >&2 && exit /b 1
+@GOTO :EOF
+: end batch / begin powershell #>
+
+$ErrorActionPreference = "Stop"
+if ($env:MVNW_VERBOSE -eq "true") {
+  $VerbosePreference = "Continue"
+}
+
+# calculate distributionUrl, requires .mvn/wrapper/maven-wrapper.properties
+$distributionUrl = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionUrl
+if (!$distributionUrl) {
+  Write-Error "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"
+}
+
+switch -wildcard -casesensitive ( $($distributionUrl -replace '^.*/','') ) {
+  "maven-mvnd-*" {
+    $USE_MVND = $true
+    $distributionUrl = $distributionUrl -replace '-bin\.[^.]*$',"-windows-amd64.zip"
+    $MVN_CMD = "mvnd.cmd"
+    break
+  }
+  default {
+    $USE_MVND = $false
+    $MVN_CMD = $script -replace '^mvnw','mvn'
+    break
+  }
+}
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+if ($env:MVNW_REPOURL) {
+  $MVNW_REPO_PATTERN = if ($USE_MVND -eq $False) { "/org/apache/maven/" } else { "/maven/mvnd/" }
+  $distributionUrl = "$env:MVNW_REPOURL$MVNW_REPO_PATTERN$($distributionUrl -replace "^.*$MVNW_REPO_PATTERN",'')"
+}
+$distributionUrlName = $distributionUrl -replace '^.*/',''
+$distributionUrlNameMain = $distributionUrlName -replace '\.[^.]*$','' -replace '-bin$',''
+
+$MAVEN_M2_PATH = "$HOME/.m2"
+if ($env:MAVEN_USER_HOME) {
+  $MAVEN_M2_PATH = "$env:MAVEN_USER_HOME"
+}
+
+if (-not (Test-Path -Path $MAVEN_M2_PATH)) {
+    New-Item -Path $MAVEN_M2_PATH -ItemType Directory | Out-Null
+}
+
+$MAVEN_WRAPPER_DISTS = $null
+if ((Get-Item $MAVEN_M2_PATH).Target[0] -eq $null) {
+  $MAVEN_WRAPPER_DISTS = "$MAVEN_M2_PATH/wrapper/dists"
+} else {
+  $MAVEN_WRAPPER_DISTS = (Get-Item $MAVEN_M2_PATH).Target[0] + "/wrapper/dists"
+}
+
+$MAVEN_HOME_PARENT = "$MAVEN_WRAPPER_DISTS/$distributionUrlNameMain"
+$MAVEN_HOME_NAME = ([System.Security.Cryptography.SHA256]::Create().ComputeHash([byte[]][char[]]$distributionUrl) | ForEach-Object {$_.ToString("x2")}) -join ''
+$MAVEN_HOME = "$MAVEN_HOME_PARENT/$MAVEN_HOME_NAME"
+
+if (Test-Path -Path "$MAVEN_HOME" -PathType Container) {
+  Write-Verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+  exit $?
+}
+
+if (! $distributionUrlNameMain -or ($distributionUrlName -eq $distributionUrlNameMain)) {
+  Write-Error "distributionUrl is not valid, must end with *-bin.zip, but found $distributionUrl"
+}
+
+# prepare tmp dir
+$TMP_DOWNLOAD_DIR_HOLDER = New-TemporaryFile
+$TMP_DOWNLOAD_DIR = New-Item -Itemtype Directory -Path "$TMP_DOWNLOAD_DIR_HOLDER.dir"
+$TMP_DOWNLOAD_DIR_HOLDER.Delete() | Out-Null
+trap {
+  if ($TMP_DOWNLOAD_DIR.Exists) {
+    try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+    catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+  }
+}
+
+New-Item -Itemtype Directory -Path "$MAVEN_HOME_PARENT" -Force | Out-Null
+
+# Download and Install Apache Maven
+Write-Verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+Write-Verbose "Downloading from: $distributionUrl"
+Write-Verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+$webclient = New-Object System.Net.WebClient
+if ($env:MVNW_USERNAME -and $env:MVNW_PASSWORD) {
+  $webclient.Credentials = New-Object System.Net.NetworkCredential($env:MVNW_USERNAME, $env:MVNW_PASSWORD)
+}
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$webclient.DownloadFile($distributionUrl, "$TMP_DOWNLOAD_DIR/$distributionUrlName") | Out-Null
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+$distributionSha256Sum = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionSha256Sum
+if ($distributionSha256Sum) {
+  if ($USE_MVND) {
+    Write-Error "Checksum validation is not supported for maven-mvnd. `nPlease disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties."
+  }
+  Import-Module $PSHOME\Modules\Microsoft.PowerShell.Utility -Function Get-FileHash
+  if ((Get-FileHash "$TMP_DOWNLOAD_DIR/$distributionUrlName" -Algorithm SHA256).Hash.ToLower() -ne $distributionSha256Sum) {
+    Write-Error "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised. If you updated your Maven version, you need to update the specified distributionSha256Sum property."
+  }
+}
+
+# unzip and move
+Expand-Archive "$TMP_DOWNLOAD_DIR/$distributionUrlName" -DestinationPath "$TMP_DOWNLOAD_DIR" | Out-Null
+
+# Find the actual extracted directory name (handles snapshots where filename != directory name)
+$actualDistributionDir = ""
+
+# First try the expected directory name (for regular distributions)
+$expectedPath = Join-Path "$TMP_DOWNLOAD_DIR" "$distributionUrlNameMain"
+$expectedMvnPath = Join-Path "$expectedPath" "bin/$MVN_CMD"
+if ((Test-Path -Path $expectedPath -PathType Container) -and (Test-Path -Path $expectedMvnPath -PathType Leaf)) {
+  $actualDistributionDir = $distributionUrlNameMain
+}
+
+# If not found, search for any directory with the Maven executable (for snapshots)
+if (!$actualDistributionDir) {
+  Get-ChildItem -Path "$TMP_DOWNLOAD_DIR" -Directory | ForEach-Object {
+    $testPath = Join-Path $_.FullName "bin/$MVN_CMD"
+    if (Test-Path -Path $testPath -PathType Leaf) {
+      $actualDistributionDir = $_.Name
+    }
+  }
+}
+
+if (!$actualDistributionDir) {
+  Write-Error "Could not find Maven distribution directory in extracted archive"
+}
+
+Write-Verbose "Found extracted Maven distribution directory: $actualDistributionDir"
+Rename-Item -Path "$TMP_DOWNLOAD_DIR/$actualDistributionDir" -NewName $MAVEN_HOME_NAME | Out-Null
+try {
+  Move-Item -Path "$TMP_DOWNLOAD_DIR/$MAVEN_HOME_NAME" -Destination $MAVEN_HOME_PARENT | Out-Null
+} catch {
+  if (! (Test-Path -Path "$MAVEN_HOME" -PathType Container)) {
+    Write-Error "fail to move MAVEN_HOME"
+  }
+} finally {
+  try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+  catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+}
+
+Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/out/ApiKeyEntity.java">
+package org.bkd.social_media_scheduler_api.api_key.adapters.out;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.bkd.social_media_scheduler_api.api_key.domains.Role;
+import org.bkd.social_media_scheduler_api.application.adapters.out.ApplicationEntity;
+
+import java.util.UUID;
+
+@Getter
+@Setter
+@Entity
+public class ApiKeyEntity {
+
+  @Id
+  @Column(nullable = false, updatable = false, unique = true)
+  private UUID id;
+
+  @Column(nullable = false)
+  @Enumerated(EnumType.STRING)
+  private Role role;
+
+  @Column(nullable = false)
+  private String value;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(nullable = false)
+  private ApplicationEntity application;
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/out/ApiKeyEntityMapper.java">
+package org.bkd.social_media_scheduler_api.api_key.adapters.out;
+
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
+
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface ApiKeyEntityMapper {
+
+  @Mapping(source = "applicationId", target = "application.id")
+  ApiKeyEntity toApiKeyEntity(ApiKey apiKey);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/out/ApiKeyMapper.java">
+package org.bkd.social_media_scheduler_api.api_key.adapters.out;
+
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
+
+import java.util.List;
+
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface ApiKeyMapper {
+
+  @Mapping(source = "application.id", target = "applicationId")
+  ApiKey toApiKey(ApiKeyEntity apiKeyEntity);
+
+  List<ApiKey> toApiKeys(List<ApiKeyEntity> apiKeyEntities);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/frameworks/ApiKeyConfiguration.java">
+package org.bkd.social_media_scheduler_api.api_key.frameworks;
+
+import org.bkd.social_media_scheduler_api.api_key.core.ports.in.CreateApiKeyUseCase;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.in.DeleteApiKeyUseCase;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.in.ReadApiKeyUseCase;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.out.ApiKeyRepository;
+import org.bkd.social_media_scheduler_api.api_key.core.services.CreateApiKeyService;
+import org.bkd.social_media_scheduler_api.api_key.core.services.DeleteApiKeyService;
+import org.bkd.social_media_scheduler_api.api_key.core.services.ReadApiKeyService;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.Transactional;
+
+@Configuration
+public class ApiKeyConfiguration {
+
+
+  @Bean
+  @Transactional
+  public CreateApiKeyUseCase apiKeyCreateService(ApiKeyRepository apiKeyRepository) {
+    return new CreateApiKeyService(apiKeyRepository);
+  }
+
+  @Bean
+  @Transactional
+  public ReadApiKeyUseCase apiKeyReadService(ApiKeyRepository apiKeyRepository) {
+    return new ReadApiKeyService(apiKeyRepository);
+  }
+
+  @Bean
+  @Transactional
+  public DeleteApiKeyUseCase apiKeyDeleteService(ApiKeyRepository apiKeyRepository) {
+    return new DeleteApiKeyService(apiKeyRepository);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/adapters/in/ApplicationRestController.java">
+package org.bkd.social_media_scheduler_api.application.adapters.in;
+
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.application.core.ports.in.CreateApplicationUseCase;
+import org.bkd.social_media_scheduler_api.application.core.ports.in.ReadApplicationUseCase;
+import org.bkd.social_media_scheduler_api.application.domain.Application;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+import static org.bkd.social_media_scheduler_api.security.SecurityConfiguration.ADMIN_BASE_PATH;
+
+@RestController
+@RequiredArgsConstructor
+public class ApplicationRestController {
+
+  private final ReadApplicationUseCase applicationReadService;
+  private final CreateApplicationUseCase applicationCreateService;
+  private final ApplicationResponseMapper applicationResponseMapper;
+
+  @PostMapping(ADMIN_BASE_PATH + "/application")
+  public ApplicationResponse createApplication(@Valid @RequestBody CreateApplicationRequest request) {
+    Application application = applicationCreateService.createApplication(request.getName(), request.getDescription());
+    return applicationResponseMapper.toApplicationResponse(application);
+  }
+
+  @GetMapping(ADMIN_BASE_PATH + "/applications")
+  public List<ApplicationResponse> readApplications() {
+    List<Application> applications = applicationReadService.readApplications();
+    return applicationResponseMapper.toApplicationResponses(applications);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/adapters/out/ApplicationEntity.java">
+package org.bkd.social_media_scheduler_api.application.adapters.out;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.UUID;
+
+@Entity
+@Getter
+@Setter
+public class ApplicationEntity {
+
+  @Id
+  @Column(nullable = false, updatable = false, unique = true)
+  private UUID id;
+
+  @Column(nullable = false)
+  private String name;
+
+  @Column(nullable = false)
+  private String description;
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/adapters/out/ApplicationEntityMapper.java">
+package org.bkd.social_media_scheduler_api.application.adapters.out;
+
+import org.bkd.social_media_scheduler_api.application.domain.Application;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
+
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface ApplicationEntityMapper {
+
+  ApplicationEntity toApplicationEntity(Application application);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/adapters/out/ApplicationMapper.java">
+package org.bkd.social_media_scheduler_api.application.adapters.out;
+
+import org.bkd.social_media_scheduler_api.application.domain.Application;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
+
+import java.util.List;
+
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface ApplicationMapper {
+
+  Application toApplication(ApplicationEntity applicationEntity);
+
+  List<Application> toApplications(List<ApplicationEntity> applicationEntities);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/frameworks/ApplicationConfiguration.java">
+package org.bkd.social_media_scheduler_api.application.frameworks;
+
+import org.bkd.social_media_scheduler_api.application.core.ports.in.CreateApplicationUseCase;
+import org.bkd.social_media_scheduler_api.application.core.ports.in.ReadApplicationUseCase;
+import org.bkd.social_media_scheduler_api.application.core.ports.out.ApplicationRepository;
+import org.bkd.social_media_scheduler_api.application.core.services.CreateApplicationService;
+import org.bkd.social_media_scheduler_api.application.core.services.ReadApplicationService;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.Transactional;
+
+@Configuration
+public class ApplicationConfiguration {
+
+  @Bean
+  @Transactional
+  public CreateApplicationUseCase applicationCreateService(ApplicationRepository applicationRepository) {
+    return new CreateApplicationService(applicationRepository);
+  }
+
+  @Bean
+  @Transactional
+  public ReadApplicationUseCase applicationReadService(ApplicationRepository applicationRepository) {
+    return new ReadApplicationService(applicationRepository);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/state/StateEntity.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.out.state;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.bkd.social_media_scheduler_api.application.adapters.out.ApplicationEntity;
+
+import java.time.Instant;
+import java.util.UUID;
+
+@Getter
+@Setter
+@Entity
+public class StateEntity {
+
+  @Id
+  @Column(nullable = false, updatable = false, unique = true)
+  private UUID id;
+
+  @Column(nullable = false)
+  private String value;
+
+  @Column(nullable = false)
+  private Instant createdAt;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(nullable = false)
+  private ApplicationEntity application;
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/services/OAuth2CallbackHandler.java">
+package org.bkd.social_media_scheduler_api.oauth2.core.services;
+
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.HandleCallbackUseCase;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.StateRepository;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.TokenManager;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.TokenRepository;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.UnsupportedPlatformException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.State;
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateExpiredException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateNotFoundException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.Token;
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.TokenExchangeException;
+
+import java.util.List;
+import java.util.UUID;
+
+@RequiredArgsConstructor
+public class OAuth2CallbackHandler implements HandleCallbackUseCase {
+
+  private final StateRepository stateRepository;
+  private final TokenRepository tokenRepository;
+  private final List<TokenManager> tokenManagers;
+
+  @Override
+  public Token handleOAuth2Callback(String code,
+                                    String scopes,
+                                    String state,
+                                    Platform platform,
+                                    UUID applicationId) throws
+                                                        UnsupportedPlatformException,
+                                                        StateNotFoundException,
+                                                        TokenExchangeException,
+                                                        StateExpiredException {
+
+    State oAuth2State = stateRepository.findByValueAndApplicationId(state, applicationId)
+                                       .orElseThrow(StateNotFoundException::new);
+
+    if (oAuth2State.isExpired()) {
+      throw new StateExpiredException();
+    }
+
+    List<TokenManager> tokenManagers = this.tokenManagers.stream().filter(s -> s.supports(platform)).toList();
+
+    if (tokenManagers.isEmpty()) {
+      throw new UnsupportedPlatformException(platform);
+    }
+
+    if (tokenManagers.size() != 1) {
+      throw new IllegalStateException("Multiple exchangers found for platform: " + platform);
+    }
+
+    TokenManager tokenManager = tokenManagers.getFirst();
+    Token token = tokenManager.exchangeCodeForToken(code, scopes, state, applicationId);
+    token = tokenRepository.save(token);
+    stateRepository.deleteByIdAndApplicationId(oAuth2State.getId(), applicationId);
+    return token;
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/services/OAuth2Initializer.java">
+package org.bkd.social_media_scheduler_api.oauth2.core.services;
+
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.InitiateOAuth2UseCase;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.StateRepository;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.UnsupportedPlatformException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.State;
+
+import java.security.SecureRandom;
+import java.util.Base64;
+import java.util.List;
+import java.util.UUID;
+
+import static org.bkd.social_media_scheduler_api.oauth2.core.services.OAuth2Utils.OAUTH2_STATE_SEPARATOR;
+
+@RequiredArgsConstructor
+public class OAuth2Initializer implements InitiateOAuth2UseCase {
+
+  private final List<AuthorizationUrlBuilder> oauth2AuthorizationUrlBuilders;
+  private final StateRepository stateRepository;
+
+  @Override
+  public String initiateOAuth2(Platform platform, UUID applicationId) throws UnsupportedPlatformException {
+
+    List<AuthorizationUrlBuilder> urlBuilders = oauth2AuthorizationUrlBuilders.stream()
+                                                                              .filter(p -> p.supports(platform))
+                                                                              .toList();
+
+    if (urlBuilders.isEmpty()) {
+      throw new UnsupportedPlatformException(platform);
+    }
+
+    if (urlBuilders.size() != 1) {
+      throw new IllegalStateException("Multiple url builders found for platform: " + platform);
+    }
+
+    AuthorizationUrlBuilder urlBuilder = urlBuilders.getFirst();
+
+    String authorizationUrl = urlBuilder.buildAuthorizationUrl(applicationId);
+
+    // State is used for CSRF protection. It will be checked during callback.
+    // We also send application ID in order to track which application initiated the OAuth2 flow
+    String state = generateState();
+    State oAuth2State = new State(state, applicationId);
+    stateRepository.save(oAuth2State);
+
+    return authorizationUrl + "&state=" + String.join(OAUTH2_STATE_SEPARATOR, state, applicationId.toString());
+  }
+
+  private String generateState() {
+    byte[] randomBytes = new byte[32];
+    new SecureRandom().nextBytes(randomBytes);
+    return Base64.getUrlEncoder().withoutPadding().encodeToString(randomBytes);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/services/OAuth2Utils.java">
+package org.bkd.social_media_scheduler_api.oauth2.core.services;
+
+public class OAuth2Utils {
+
+  public static final String OAUTH2_STATE_SEPARATOR = "~";
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/frameworks/Platform.java">
+package org.bkd.social_media_scheduler_api.oauth2.frameworks;
+
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@Getter
+@RequiredArgsConstructor
+public class Platform {
+
+  private final String clientId;
+
+  private final String clientSecret;
+
+  private final String scope;
+
+  private final String redirectUri;
+
+  private final String responseType;
+
+  private final String grantType;
+
+  private final String authorizationUri;
+
+  private final String tokenUri;
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/frameworks/PlatformsProperties.java">
+package org.bkd.social_media_scheduler_api.oauth2.frameworks;
+
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+@Getter
+@RequiredArgsConstructor
+@ConfigurationProperties(prefix = "oauth2")
+public class PlatformsProperties {
+
+  private final Platform tiktok;
+}
+</file>
+
+<file path="src/main/resources/db/changelog/db.changelog-master.yaml">
+databaseChangeLog:
+  - include:
+      file: db/changelog/v1/db-initialization.xml
+  - include:
+      file: db/changelog/v1/insert-application-and-api-key.xml
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/in/ApiKeyRestController.java">
+package org.bkd.social_media_scheduler_api.api_key.adapters.in;
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.in.CreateApiKeyUseCase;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.in.DeleteApiKeyUseCase;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.in.ReadApiKeyUseCase;
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+import org.bkd.social_media_scheduler_api.security.AuthenticationContext;
+import org.bkd.social_media_scheduler_api.security.TenantContext;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.UUID;
+
+import static org.bkd.social_media_scheduler_api.security.SecurityConfiguration.ADMIN_BASE_PATH;
+
+@RestController
+@RequiredArgsConstructor
+public class ApiKeyRestController {
+
+  private final ReadApiKeyUseCase apiKeyReadService;
+  private final DeleteApiKeyUseCase apiKeyDeleteService;
+  private final CreateApiKeyUseCase apiKeyCreateService;
+  private final ApiKeyResponseMapper apiKeyResponseMapper;
+
+  @GetMapping(ADMIN_BASE_PATH + "/apiKeys")
+  public List<ApiKeyResponse> readApiKeys() {
+    UUID applicationId = TenantContext.getTenant();
+    List<ApiKey> apiKeys = apiKeyReadService.readApiKeys(applicationId);
+    return apiKeyResponseMapper.toApiKeyResponses(apiKeys);
+  }
+
+  @PostMapping(ADMIN_BASE_PATH + "/apiKey")
+  public ApiKeyResponse createApiKey() {
+    ApiKey apiKey = AuthenticationContext.getAuthentication();
+    UUID applicationId = apiKey.getApplicationId();
+    ApiKey newApiKey = apiKeyCreateService.createApiKey(applicationId);
+    return apiKeyResponseMapper.toApiKeyResponse(newApiKey);
+  }
+
+  @DeleteMapping(ADMIN_BASE_PATH + "/apiKey/{apiKeyId}")
+  public void deleteApiKey(@PathVariable UUID apiKeyId) {
+    UUID applicationId = TenantContext.getTenant();
+    apiKeyDeleteService.deleteApiKey(apiKeyId, applicationId);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/adapters/out/ApiKeyJpaRepository.java">
+package org.bkd.social_media_scheduler_api.api_key.adapters.out;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+public interface ApiKeyJpaRepository extends JpaRepository<ApiKeyEntity, UUID> {
+
+  Optional<ApiKeyEntity> findByValueAndApplicationId(String value, UUID applicationId);
+
+  void deleteByIdAndApplicationId(UUID apiKeyId, UUID applicationId);
+
+  List<ApiKeyEntity> findAllByApplicationId(UUID applicationId);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/adapters/out/ApplicationJpaRepository.java">
+package org.bkd.social_media_scheduler_api.application.adapters.out;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.UUID;
+
+public interface ApplicationJpaRepository extends JpaRepository<ApplicationEntity, UUID> {
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/core/ports/in/CreateApplicationUseCase.java">
+package org.bkd.social_media_scheduler_api.application.core.ports.in;
+
+
+import org.bkd.social_media_scheduler_api.application.domain.Application;
+
+public interface CreateApplicationUseCase {
+
+  Application createApplication(String name, String description);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/core/ports/in/ReadApplicationUseCase.java">
+package org.bkd.social_media_scheduler_api.application.core.ports.in;
+
+
+import org.bkd.social_media_scheduler_api.application.domain.Application;
+
+import java.util.List;
+
+public interface ReadApplicationUseCase {
+
+  List<Application> readApplications();
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/core/ports/out/ApplicationRepository.java">
+package org.bkd.social_media_scheduler_api.application.core.ports.out;
+
+
+import org.bkd.social_media_scheduler_api.application.domain.Application;
+
+import java.util.List;
+
+public interface ApplicationRepository {
+
+  Application save(Application application);
+
+  List<Application> findAll();
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/core/services/CreateApplicationService.java">
+package org.bkd.social_media_scheduler_api.application.core.services;
+
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.application.core.ports.in.CreateApplicationUseCase;
+import org.bkd.social_media_scheduler_api.application.core.ports.out.ApplicationRepository;
+import org.bkd.social_media_scheduler_api.application.domain.Application;
+
+@RequiredArgsConstructor
+public class CreateApplicationService implements CreateApplicationUseCase {
+
+  private final ApplicationRepository applicationRepository;
+
+  @Override
+  public Application createApplication(String name, String description) {
+    Application application = new Application(name, description);
+    return applicationRepository.save(application);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/core/services/ReadApplicationService.java">
+package org.bkd.social_media_scheduler_api.application.core.services;
+
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.application.core.ports.in.ReadApplicationUseCase;
+import org.bkd.social_media_scheduler_api.application.core.ports.out.ApplicationRepository;
+import org.bkd.social_media_scheduler_api.application.domain.Application;
+
+import java.util.List;
+
+@RequiredArgsConstructor
+public class ReadApplicationService implements ReadApplicationUseCase {
+
+  private final ApplicationRepository applicationRepository;
+
+  @Override
+  public List<Application> readApplications() {
+    return applicationRepository.findAll();
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/state/StateEntityMapper.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.out.state;
+
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.State;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
+
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface StateEntityMapper {
+
+  @Mapping(source = "applicationId", target = "application.id")
+  StateEntity toStateEntity(State state);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/state/StateJpaRepository.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.out.state;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+import java.util.UUID;
+
+public interface StateJpaRepository extends JpaRepository<StateEntity, UUID> {
+  void deleteByIdAndApplicationId(UUID stateId, UUID applicationId);
+
+  Optional<StateEntity> findByValueAndApplicationId(String value, UUID applicationId);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/state/StateMapper.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.out.state;
+
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.State;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
+
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface StateMapper {
+
+  @Mapping(source = "application.id", target = "applicationId")
+  State toState(StateEntity stateEntity);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token/TokenEntity.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.out.token;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.bkd.social_media_scheduler_api.application.adapters.out.ApplicationEntity;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
+
+import java.time.Instant;
+import java.util.UUID;
+
+@Getter
+@Setter
+@Entity(name = "oauth2_token")
+public class TokenEntity {
+
+  @Id
+  @Column(nullable = false, updatable = false, unique = true)
+  private UUID id;
+
+  @Column(nullable = false)
+  private String openId;
+
+  @Column(nullable = false)
+  private String scope;
+
+  @Column(nullable = false)
+  private String accessToken;
+
+  @Column(nullable = false)
+  private String refreshToken;
+
+  @Column(nullable = false)
+  private Instant accessTokenExpiresAt;
+
+  @Column(nullable = false)
+  private Instant refreshTokenExpiresAt;
+
+  @Column(nullable = false)
+  private String tokenType;
+
+  @Column(nullable = false)
+  @Enumerated(EnumType.STRING)
+  private Platform platform;
+
+  @Column(nullable = false)
+  private Instant createdAt;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(nullable = false)
+  private ApplicationEntity application;
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token/TokenEntityMapper.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.out.token;
+
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.Token;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
+
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface TokenEntityMapper {
+
+  @Mapping(source = "applicationId", target = "application.id")
+  TokenEntity toTokenEntity(Token token);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token/TokenJpaRepository.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.out.token;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+public interface TokenJpaRepository extends JpaRepository<TokenEntity, UUID> {
+
+  void deleteByIdAndApplicationId(UUID tokenId, UUID applicationId);
+
+  Optional<TokenEntity> findByIdAndApplicationId(UUID tokenId, UUID applicationId);
+
+  List<TokenEntity> findAllByApplicationId(UUID applicationId);
+  
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token/TokenMapper.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.out.token;
+
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.Token;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
+
+import java.util.List;
+
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
+public interface TokenMapper {
+
+  @Mapping(source = "application.id", target = "applicationId")
+  Token toToken(TokenEntity tokenEntity);
+
+  List<Token> toTokens(List<TokenEntity> tokenEntities);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/domains/platform/Platform.java">
+package org.bkd.social_media_scheduler_api.oauth2.domains.platform;
+
+public enum Platform {
+  tiktok, youtube, instagram
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/SocialMediaSchedulerApi.java">
+package org.bkd.social_media_scheduler_api;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+class SocialMediaSchedulerApi {
+
+  static void main(String[] args) {
+    SpringApplication.run(SocialMediaSchedulerApi.class, args);
+  }
+
+}
+</file>
+
+<file path="src/main/resources/db/changelog/v1/insert-application-and-api-key.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1784574254041-1" author="rxmi-bkd" context="development">
+        <insert tableName="application_entity">
+            <column name="id">496ad391-fc55-4751-872c-ef6edd7da1bf</column>
+            <column name="name">name</column>
+            <column name="description">description</column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1784574277597-1" author="rxmi-bkd" context="development">
+        <insert tableName="api_key_entity">
+            <column name="id">0a2a2def-e573-465e-ba8b-e4ead5e9ed35</column>
+            <column name="role">ADMIN</column>
+            <column name="value">admin_key</column>
+            <column name="application_id">496ad391-fc55-4751-872c-ef6edd7da1bf</column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1784583981924-1" author="rxmi-bkd" context="development">
+        <insert tableName="api_key_entity">
+            <column name="id">31477c6c-170e-47ab-9e4b-fd06ecb07998</column>
+            <column name="role">USER</column>
+            <column name="value">user_key</column>
+            <column name="application_id">496ad391-fc55-4751-872c-ef6edd7da1bf</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
+</file>
+
+<file path="pom.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.1.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>org.bkd</groupId>
+    <artifactId>social-media-scheduler-api</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>social-media-scheduler-api</name>
+    <description>social-media-scheduler-api</description>
+    <url/>
+    <licenses>
+        <license/>
+    </licenses>
+    <developers>
+        <developer/>
+    </developers>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+    <properties>
+        <java.version>25</java.version>
+        <org.mapstruct.version>1.6.3</org.mapstruct.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-liquibase</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${org.mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <configuration>
+                            <annotationProcessorPaths>
+                                <path>
+                                    <groupId>org.projectlombok</groupId>
+                                    <artifactId>lombok</artifactId>
+                                </path>
+                                <path>
+                                    <groupId>org.mapstruct</groupId>
+                                    <artifactId>mapstruct-processor</artifactId>
+                                    <version>${org.mapstruct.version}</version>
+                                </path>
+                            </annotationProcessorPaths>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>default-testCompile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <configuration>
+                            <annotationProcessorPaths>
+                                <path>
+                                    <groupId>org.projectlombok</groupId>
+                                    <artifactId>lombok</artifactId>
+                                </path>
+                            </annotationProcessorPaths>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/core/ports/in/CreateApiKeyUseCase.java">
+package org.bkd.social_media_scheduler_api.api_key.core.ports.in;
+
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+
+import java.util.UUID;
+
+public interface CreateApiKeyUseCase {
+
+  ApiKey createApiKey(UUID applicationId);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/core/ports/in/DeleteApiKeyUseCase.java">
+package org.bkd.social_media_scheduler_api.api_key.core.ports.in;
+
+import java.util.UUID;
+
+public interface DeleteApiKeyUseCase {
+
+  void deleteApiKey(UUID apiKeyId, UUID applicationId);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/core/ports/in/ReadApiKeyUseCase.java">
+package org.bkd.social_media_scheduler_api.api_key.core.ports.in;
+
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKeyNotFoundException;
+
+import java.util.List;
+import java.util.UUID;
+
+public interface ReadApiKeyUseCase {
+
+  ApiKey readApiKey(String apiKeyValue, UUID applicationId) throws ApiKeyNotFoundException;
+
+  List<ApiKey> readApiKeys(UUID applicationId);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/core/ports/out/ApiKeyRepository.java">
+package org.bkd.social_media_scheduler_api.api_key.core.ports.out;
+
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+public interface ApiKeyRepository {
+
+  ApiKey save(ApiKey apiKey);
+
+  void deleteByIdAndApplicationId(UUID apiKeyId, UUID applicationId);
+
+  Optional<ApiKey> findByValueAndApplicationId(String value, UUID applicationId);
+
+  List<ApiKey> findAllByApplicationId(UUID applicationId);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/core/services/CreateApiKeyService.java">
+package org.bkd.social_media_scheduler_api.api_key.core.services;
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.in.CreateApiKeyUseCase;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.out.ApiKeyRepository;
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+
+import java.util.UUID;
+
+@RequiredArgsConstructor
+public class CreateApiKeyService implements CreateApiKeyUseCase {
+
+  private final ApiKeyRepository apiKeyRepository;
+
+  @Override
+  public ApiKey createApiKey(UUID applicationId) {
+    ApiKey apiKey = new ApiKey(applicationId);
+    apiKey = apiKeyRepository.save(apiKey);
+    return apiKey;
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/core/services/DeleteApiKeyService.java">
+package org.bkd.social_media_scheduler_api.api_key.core.services;
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.in.DeleteApiKeyUseCase;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.out.ApiKeyRepository;
+
+import java.util.UUID;
+
+@RequiredArgsConstructor
+public class DeleteApiKeyService implements DeleteApiKeyUseCase {
+
+  private final ApiKeyRepository apiKeyRepository;
+
+  @Override
+  public void deleteApiKey(UUID apiKeyId, UUID applicationId) {
+    apiKeyRepository.deleteByIdAndApplicationId(apiKeyId, applicationId);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/core/services/ReadApiKeyService.java">
+package org.bkd.social_media_scheduler_api.api_key.core.services;
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.in.ReadApiKeyUseCase;
+import org.bkd.social_media_scheduler_api.api_key.core.ports.out.ApiKeyRepository;
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKey;
+import org.bkd.social_media_scheduler_api.api_key.domains.ApiKeyNotFoundException;
+
+import java.util.List;
+import java.util.UUID;
+
+@RequiredArgsConstructor
+public class ReadApiKeyService implements ReadApiKeyUseCase {
+
+  private final ApiKeyRepository apiKeyRepository;
+
+  @Override
+  public ApiKey readApiKey(String apiKeyValue, UUID applicationId) throws ApiKeyNotFoundException {
+    return apiKeyRepository.findByValueAndApplicationId(apiKeyValue, applicationId)
+                           .orElseThrow(ApiKeyNotFoundException::new);
+  }
+
+  @Override
+  public List<ApiKey> readApiKeys(UUID applicationId) {
+    return apiKeyRepository.findAllByApplicationId(applicationId);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/api_key/domains/ApiKey.java">
+package org.bkd.social_media_scheduler_api.api_key.domains;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import java.security.SecureRandom;
+import java.util.Base64;
+import java.util.UUID;
+
+@Getter
+@Setter
+public class ApiKey {
+
+  private UUID id;
+
+  private Role role;
+
+  private String value;
+
+  private UUID applicationId;
+
+  public ApiKey(UUID applicationId) {
+    this.id = UUID.randomUUID();
+    this.role = Role.USER;
+
+    byte[] randomBytes = new byte[32];
+    SecureRandom secureRandom = new SecureRandom();
+    secureRandom.nextBytes(randomBytes);
+    this.value = Base64.getUrlEncoder().withoutPadding().encodeToString(randomBytes);
+
+    this.applicationId = applicationId;
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/application/domain/Application.java">
+package org.bkd.social_media_scheduler_api.application.domain;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.UUID;
+
+@Getter
+@Setter
+public class Application {
+
+  private UUID id;
+
+  private String name;
+
+  private String description;
+
+  public Application(String name, String description) {
+    this.id = UUID.randomUUID();
+    this.name = name;
+    this.description = description;
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/ports/out/StateRepository.java">
+package org.bkd.social_media_scheduler_api.oauth2.core.ports.out;
+
+
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.State;
+
+import java.util.Optional;
+import java.util.UUID;
+
+public interface StateRepository {
+
+  State save(State state);
+
+  Optional<State> findByValueAndApplicationId(String value, UUID applicationId);
+
+  void deleteByIdAndApplicationId(UUID stateId, UUID applicationId);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/ports/out/TokenManager.java">
+package org.bkd.social_media_scheduler_api.oauth2.core.ports.out;
+
+
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.Token;
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.TokenExchangeException;
+
+import java.util.UUID;
+
+public interface TokenManager {
+
+  boolean supports(Platform platform);
+
+  Token exchangeCodeForToken(
+      String code,
+      String scopes,
+      String state,
+      UUID applicationId
+  )
+  throws TokenExchangeException;
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/ports/out/TokenRepository.java">
+package org.bkd.social_media_scheduler_api.oauth2.core.ports.out;
+
+
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.Token;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+public interface TokenRepository {
+
+  Token save(Token token);
+
+  void deleteByIdAndApplicationId(UUID tokenId, UUID applicationId);
+
+  Optional<Token> findByIdAndApplicationId(UUID tokenId, UUID applicationId);
+
+  List<Token> findAllByApplicationId(UUID applicationId);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/services/AuthorizationUrlBuilder.java">
+package org.bkd.social_media_scheduler_api.oauth2.core.services;
+
+
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
+
+import java.util.UUID;
+
+public interface AuthorizationUrlBuilder {
+
+  boolean supports(Platform platform);
+
+  String buildAuthorizationUrl(UUID applicationId);
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/services/TiktokAuthorizationUrlBuilder.java">
+package org.bkd.social_media_scheduler_api.oauth2.core.services;
+
+
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
+
+import java.util.UUID;
+
+@RequiredArgsConstructor
+public class TiktokAuthorizationUrlBuilder implements AuthorizationUrlBuilder {
+
+  private final org.bkd.social_media_scheduler_api.oauth2.frameworks.Platform properties;
+
+  @Override
+  public boolean supports(Platform platform) {
+    return platform == Platform.tiktok;
+  }
+
+  @Override
+  public String buildAuthorizationUrl(UUID applicationId) {
+    return String.format(
+        properties.getAuthorizationUri() + "?client_key=%s&response_type=%s&scope=%s&redirect_uri=%s",
+        properties.getClientId(),
+        properties.getResponseType(),
+        properties.getScope(),
+        properties.getRedirectUri()
+    );
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/frameworks/OAuth2Configuration.java">
+package org.bkd.social_media_scheduler_api.oauth2.frameworks;
+
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.HandleCallbackUseCase;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.InitiateOAuth2UseCase;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.StateRepository;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.TokenManager;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.TokenRepository;
+import org.bkd.social_media_scheduler_api.oauth2.core.services.AuthorizationUrlBuilder;
+import org.bkd.social_media_scheduler_api.oauth2.core.services.OAuth2CallbackHandler;
+import org.bkd.social_media_scheduler_api.oauth2.core.services.OAuth2Initializer;
+import org.bkd.social_media_scheduler_api.oauth2.core.services.TiktokAuthorizationUrlBuilder;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Configuration
+@EnableConfigurationProperties(PlatformsProperties.class)
+public class OAuth2Configuration {
+
+  @Bean
+  @Transactional
+  public AuthorizationUrlBuilder tiktokAuthorizationUrlBuilder(PlatformsProperties platformsProperties) {
+    return new TiktokAuthorizationUrlBuilder(platformsProperties.getTiktok());
+  }
+
+  @Bean
+  @Transactional
+  public InitiateOAuth2UseCase OAuth2Initializer(List<AuthorizationUrlBuilder> authorizationUrlBuilders,
+                                                 StateRepository stateRepository) {
+
+    return new OAuth2Initializer(authorizationUrlBuilders, stateRepository);
+  }
+
+  @Bean
+  @Transactional
+  public HandleCallbackUseCase OAuth2CallbackHandler(StateRepository stateRepository,
+                                                     TokenRepository tokenRepository,
+                                                     List<TokenManager> tokenManagers) {
+
+    return new OAuth2CallbackHandler(stateRepository, tokenRepository, tokenManagers);
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/in/OAuth2RestController.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.in;
+
+import jakarta.servlet.http.HttpServletRequest;
+import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.HandleCallbackUseCase;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.InitiateOAuth2UseCase;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.UnsupportedPlatformException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateExpiredException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateNotFoundException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.TokenExchangeException;
+import org.bkd.social_media_scheduler_api.security.TenantContext;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.UUID;
+
+import static org.bkd.social_media_scheduler_api.oauth2.core.services.OAuth2Utils.OAUTH2_STATE_SEPARATOR;
+import static org.bkd.social_media_scheduler_api.security.SecurityConfiguration.BASE_PATH;
+
+@RestController
+@RequiredArgsConstructor
+public class OAuth2RestController {
+
+  private final InitiateOAuth2UseCase oAuth2Initializer;
+  private final HandleCallbackUseCase oAuthCallbackHandler;
+
+  @GetMapping(BASE_PATH + "/oauth/{platform}/authorize")
+  public AuthorizationUrlResponse initialize(@PathVariable String platform) {
+    UUID applicationId = TenantContext.getTenant();
+    Platform p = resolvePlatform(platform);
+    String authorizationUrl = initialize_(p, applicationId);
+    return new AuthorizationUrlResponse(authorizationUrl);
+  }
+
+  private String initialize_(Platform platform, UUID applicationId) {
+    try {
+      return oAuth2Initializer.initiateOAuth2(platform, applicationId);
+    } catch (UnsupportedPlatformException e) {
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+    }
+  }
+
+  private Platform resolvePlatform(String platform) {
+    try {
+      return Platform.valueOf(platform);
+    } catch (IllegalArgumentException e) {
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Unsupported platform: " + platform);
+    }
+  }
+
+  @GetMapping(BASE_PATH + "/login/oauth/code/{platform}")
+  public void handleCallback(@PathVariable String platform, HttpServletRequest request) {
+    Platform p = resolvePlatform(platform);
+    String code = extractFromRequest(request, "code");
+    String scopes = extractFromRequest(request, "scopes");
+    String state = extractFromRequest(request, "state");
+    UUID applicationId = extractApplicationIdFromState(state);
+    state = removeApplicationIdFromState(state);
+    handleCallback_(code, scopes, state, p, applicationId);
+  }
+
+  private void handleCallback_(String code, String scopes, String state, Platform platform, UUID applicationId) {
+    try {
+      oAuthCallbackHandler.handleOAuth2Callback(code, scopes, state, platform, applicationId);
+    } catch (UnsupportedPlatformException | StateNotFoundException | StateExpiredException e) {
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+    } catch (TokenExchangeException e) {
+      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+    }
+  }
+
+  private UUID extractApplicationIdFromState(String state) {
+    try {
+      String applicationId = state.split(OAUTH2_STATE_SEPARATOR)[1];
+      return UUID.fromString(applicationId);
+    } catch (IllegalArgumentException | ArrayIndexOutOfBoundsException e) {
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "State is invalid");
+    }
+  }
+
+  private String removeApplicationIdFromState(String state) {
+    return state.split(OAUTH2_STATE_SEPARATOR)[0];
+  }
+
+  private String extractFromRequest(HttpServletRequest request, String key) {
+    String value = request.getParameter(key);
+
+    if (value == null) {
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Missing required parameter " + key);
+    }
+
+    return value;
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/adapters/out/token_managers/TiktokTokenManager.java">
+package org.bkd.social_media_scheduler_api.oauth2.adapters.out.token_managers;
+
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.TokenManager;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.Token;
+import org.bkd.social_media_scheduler_api.oauth2.domains.token.TokenExchangeException;
+import org.bkd.social_media_scheduler_api.oauth2.frameworks.PlatformsProperties;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestClient;
+
+import java.time.Instant;
+import java.util.Map;
+import java.util.UUID;
+
+import static org.springframework.util.StringUtils.hasText;
+
+@Slf4j
+@Service
+@RequiredArgsConstructor
+public class TiktokTokenManager implements TokenManager {
+
+  private final static RestClient restClient = RestClient.create();
+
+  private final PlatformsProperties platformsProperties;
+
+
+  @Override
+  public boolean supports(Platform platform) {
+    return platform == Platform.tiktok;
+  }
+
+  @Override
+  public Token exchangeCodeForToken(String code, String scopes, String state, UUID applicationId) throws
+                                                                                                  TokenExchangeException {
+
+    MultiValueMap<String, String> body = buildRequestBody(code);
+    Map<String, Object> response = performRequest(body);
+    return buildOAuth2Token(response, applicationId);
+
+  }
+
+  private Token buildOAuth2Token(Map<String, Object> response, UUID applicationId) throws TokenExchangeException {
+
+    String openId = (String) response.get("open_id");
+    String scope = (String) response.get("scope");
+    String accessToken = (String) response.get("access_token");
+    String refreshToken = (String) response.get("refresh_token");
+    Integer accessTokenExpiresInSeconds = (Integer) response.get("expires_in");
+    Integer refreshExpiresInSeconds = (Integer) response.get("refresh_expires_in");
+    String tokenType = (String) response.get("token_type");
+    String error = (String) response.get("error");
+    String errorDescription = (String) response.get("error_description");
+
+    if (hasText(error)) {
+      throw new TokenExchangeException(errorDescription);
+    }
+
+    Instant now = Instant.now();
+
+    return new Token(openId,
+                     scope,
+                     accessToken,
+                     refreshToken,
+                     now.plusSeconds(accessTokenExpiresInSeconds),
+                     now.plusSeconds(refreshExpiresInSeconds),
+                     tokenType,
+                     Platform.tiktok,
+                     applicationId);
+  }
+
+  private Map<String, Object> performRequest(MultiValueMap<String, String> body) throws TokenExchangeException {
+
+    try {
+      org.bkd.social_media_scheduler_api.oauth2.frameworks.Platform properties = getProperties();
+      String uri = properties.getTokenUri().endsWith("/") ? properties.getTokenUri() : properties.getTokenUri() + "/";
+
+      return restClient.post()
+                       .uri(uri)
+                       .body(body)
+                       .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                       .retrieve()
+                       .body(new ParameterizedTypeReference<Map<String, Object>>() {
+                       });
+
+    } catch (Exception e) {
+      throw new TokenExchangeException("An error occurred while exchanging tokens with tiktok server");
+    }
+  }
+
+  private MultiValueMap<String, String> buildRequestBody(String code) {
+    org.bkd.social_media_scheduler_api.oauth2.frameworks.Platform properties = getProperties();
+    MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
+    body.add("client_key", properties.getClientId());
+    body.add("client_secret", properties.getClientSecret());
+    body.add("code", code);
+    body.add("grant_type", properties.getGrantType());
+    body.add("redirect_uri", properties.getRedirectUri());
+    return body;
+  }
+
+  private org.bkd.social_media_scheduler_api.oauth2.frameworks.Platform getProperties() {
+    return platformsProperties.getTiktok();
+  }
+}
+</file>
+
+<file path="src/main/java/org/bkd/social_media_scheduler_api/oauth2/core/ports/in/InitiateOAuth2UseCase.java">
+package org.bkd.social_media_scheduler_api.oauth2.core.ports.in;
+
+
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
+import org.bkd.social_media_scheduler_api.oauth2.domains.platform.UnsupportedPlatformException;
+
+import java.util.UUID;
+
+public interface InitiateOAuth2UseCase {
+
+  String initiateOAuth2(Platform platform, UUID applicationId) throws UnsupportedPlatformException;
+}
+</file>
+
+<file path="src/main/resources/db/changelog/v1/db-initialization.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-5.0.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1784754149088-1" author="bouka">
+        <createTable tableName="api_key_entity">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_apikeyentity"/>
+            </column>
+            <column name="role" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="application_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1784754149088-2" author="bouka">
+        <createTable tableName="application_entity">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_applicationentity"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1784754149088-3" author="bouka">
+        <createTable tableName="oauth2_state">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_oauth2_state"/>
+            </column>
+            <column name="value" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="application_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1784754149088-4" author="bouka">
+        <createTable tableName="oauth2_token">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_oauth2_token"/>
+            </column>
+            <column name="open_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="scope" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="access_token" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="refresh_token" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="access_token_expires_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="refresh_token_expires_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="token_type" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="platform" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="application_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1784754149088-5" author="bouka">
+        <addForeignKeyConstraint baseColumnNames="application_id" baseTableName="api_key_entity"
+                                 constraintName="FK_APIKEYENTITY_ON_APPLICATION" referencedColumnNames="id"
+                                 referencedTableName="application_entity"/>
+    </changeSet>
+    <changeSet id="1784754149088-6" author="bouka">
+        <addForeignKeyConstraint baseColumnNames="application_id" baseTableName="oauth2_state"
+                                 constraintName="FK_OAUTH2_STATE_ON_APPLICATION" referencedColumnNames="id"
+                                 referencedTableName="application_entity"/>
+    </changeSet>
+    <changeSet id="1784754149088-7" author="bouka">
+        <addForeignKeyConstraint baseColumnNames="application_id" baseTableName="oauth2_token"
+                                 constraintName="FK_OAUTH2_TOKEN_ON_APPLICATION" referencedColumnNames="id"
+                                 referencedTableName="application_entity"/>
+    </changeSet>
+
+</databaseChangeLog>
+</file>
+
+<file path="src/main/resources/application.properties">
+spring.application.name=social-media-scheduler-api
+spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+spring.jpa.hibernate.ddl-auto=validate
+spring.jpa.show-sql=true
+spring.liquibase.enabled=true
+spring.liquibase.contexts=development
+spring.liquibase.change-log=classpath:/db/changelog/db.changelog-master.yaml
+spring.web.error.include-stacktrace=never
+oauth2.tiktok.client-id=sbawcx12hwik80mokr
+oauth2.tiktok.client-secret=4dPS5OPilHPpxsJp48wX89RofpZaaeZo
+oauth2.tiktok.scope=user.info.basic,video.publish,video.upload
+oauth2.tiktok.redirect-uri=https://unfrugally-erodent-mitchel.ngrok-free.dev/api/login/oauth/code/tiktok
+oauth2.tiktok.response-type=code
+oauth2.tiktok.grant-type=authorization_code
+oauth2.tiktok.authorization-uri=https://www.tiktok.com/v2/auth/authorize
+oauth2.tiktok.token-uri=https://open.tiktokapis.com/v2/oauth/token
+</file>
+
+</files>

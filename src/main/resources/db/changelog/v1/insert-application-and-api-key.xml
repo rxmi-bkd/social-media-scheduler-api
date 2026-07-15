@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1784574254041-1" author="rxmi-bkd" context="development">
+        <insert tableName="application_entity">
+            <column name="id">496ad391-fc55-4751-872c-ef6edd7da1bf</column>
+            <column name="name">name</column>
+            <column name="description">description</column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1784574277597-1" author="rxmi-bkd" context="development">
+        <insert tableName="api_key_entity">
+            <column name="id">0a2a2def-e573-465e-ba8b-e4ead5e9ed35</column>
+            <column name="role">ADMIN</column>
+            <column name="value">admin_key</column>
+            <column name="application_id">496ad391-fc55-4751-872c-ef6edd7da1bf</column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1784583981924-1" author="rxmi-bkd" context="development">
+        <insert tableName="api_key_entity">
+            <column name="id">31477c6c-170e-47ab-9e4b-fd06ecb07998</column>
+            <column name="role">USER</column>
+            <column name="value">user_key</column>
+            <column name="application_id">496ad391-fc55-4751-872c-ef6edd7da1bf</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

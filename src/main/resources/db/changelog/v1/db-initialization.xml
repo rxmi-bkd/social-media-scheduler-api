@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-5.0.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1784754149088-1" author="bouka">
+        <createTable tableName="api_key_entity">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_apikeyentity"/>
+            </column>
+            <column name="role" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="application_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1784754149088-2" author="bouka">
+        <createTable tableName="application_entity">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_applicationentity"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1784754149088-3" author="bouka">
+        <createTable tableName="oauth2_state">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_oauth2_state"/>
+            </column>
+            <column name="value" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="application_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1784754149088-4" author="bouka">
+        <createTable tableName="oauth2_token">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_oauth2_token"/>
+            </column>
+            <column name="open_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="scope" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="access_token" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="refresh_token" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="access_token_expires_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="refresh_token_expires_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="token_type" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="platform" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="application_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1784754149088-5" author="bouka">
+        <addForeignKeyConstraint baseColumnNames="application_id" baseTableName="api_key_entity"
+                                 constraintName="FK_APIKEYENTITY_ON_APPLICATION" referencedColumnNames="id"
+                                 referencedTableName="application_entity"/>
+    </changeSet>
+    <changeSet id="1784754149088-6" author="bouka">
+        <addForeignKeyConstraint baseColumnNames="application_id" baseTableName="oauth2_state"
+                                 constraintName="FK_OAUTH2_STATE_ON_APPLICATION" referencedColumnNames="id"
+                                 referencedTableName="application_entity"/>
+    </changeSet>
+    <changeSet id="1784754149088-7" author="bouka">
+        <addForeignKeyConstraint baseColumnNames="application_id" baseTableName="oauth2_token"
+                                 constraintName="FK_OAUTH2_TOKEN_ON_APPLICATION" referencedColumnNames="id"
+                                 referencedTableName="application_entity"/>
+    </changeSet>
+
+</databaseChangeLog>
