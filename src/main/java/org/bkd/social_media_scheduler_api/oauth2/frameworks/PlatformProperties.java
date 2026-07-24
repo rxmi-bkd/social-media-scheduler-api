@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Getter
 @RequiredArgsConstructor
 @ConfigurationProperties(prefix = "oauth2")
-public class PlatformsProperties {
+public class PlatformProperties {
 
   private final Platform tiktok;
 }

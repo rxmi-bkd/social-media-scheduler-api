@@ -2,6 +2,7 @@ package org.bkd.social_media_scheduler_api.oauth2.frameworks;
 
 import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.HandleCallbackUseCase;
 import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.InitiateOAuth2UseCase;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.ProfileService;
 import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.StateRepository;
 import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.TokenManager;
 import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.TokenRepository;
@@ -17,13 +18,17 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Configuration
-@EnableConfigurationProperties(PlatformsProperties.class)
+@EnableConfigurationProperties(PlatformProperties.class)
 public class OAuth2Configuration {
 
   @Bean
   @Transactional
-  public AuthorizationUrlBuilder tiktokAuthorizationUrlBuilder(PlatformsProperties platformsProperties) {
-    return new TiktokAuthorizationUrlBuilder(platformsProperties.getTiktok());
+  public AuthorizationUrlBuilder tiktokAuthorizationUrlBuilder(PlatformProperties platformProperties) {
+    return new TiktokAuthorizationUrlBuilder(platformProperties.getTiktok().authorizationUri(),
+                                             platformProperties.getTiktok().clientId(),
+                                             platformProperties.getTiktok().responseType(),
+                                             platformProperties.getTiktok().scope(),
+                                             platformProperties.getTiktok().redirectUri());
   }
 
   @Bean
@@ -38,9 +43,10 @@ public class OAuth2Configuration {
   @Transactional
   public HandleCallbackUseCase OAuth2CallbackHandler(StateRepository stateRepository,
                                                      TokenRepository tokenRepository,
-                                                     List<TokenManager> tokenManagers) {
+                                                     List<TokenManager> tokenManagers,
+                                                     List<ProfileService> profileServices) {
 
-    return new OAuth2CallbackHandler(stateRepository, tokenRepository, tokenManagers);
+    return new OAuth2CallbackHandler(stateRepository, tokenRepository, tokenManagers, profileServices);
   }
 }
 

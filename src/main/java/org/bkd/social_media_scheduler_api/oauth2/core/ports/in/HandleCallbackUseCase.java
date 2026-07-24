@@ -3,6 +3,7 @@ package org.bkd.social_media_scheduler_api.oauth2.core.ports.in;
 
 import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
 import org.bkd.social_media_scheduler_api.oauth2.domains.platform.UnsupportedPlatformException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.profile.ProfileRetrievalException;
 import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateExpiredException;
 import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateNotFoundException;
 import org.bkd.social_media_scheduler_api.oauth2.domains.token.Token;
@@ -16,5 +17,6 @@ public interface HandleCallbackUseCase {
                                                                                                               UnsupportedPlatformException,
                                                                                                               StateNotFoundException,
                                                                                                               TokenExchangeException,
-                                                                                                              StateExpiredException;
+                                                                                                              StateExpiredException,
+                                                                                                              ProfileRetrievalException;
 }

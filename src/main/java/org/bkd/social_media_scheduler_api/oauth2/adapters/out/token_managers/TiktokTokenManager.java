@@ -3,12 +3,12 @@ package org.bkd.social_media_scheduler_api.oauth2.adapters.out.token_managers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.ProfileService;
 import org.bkd.social_media_scheduler_api.oauth2.core.ports.out.TokenManager;
 import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
 import org.bkd.social_media_scheduler_api.oauth2.domains.token.Token;
 import org.bkd.social_media_scheduler_api.oauth2.domains.token.TokenExchangeException;
-import org.bkd.social_media_scheduler_api.oauth2.frameworks.PlatformsProperties;
-import org.springframework.core.ParameterizedTypeReference;
+import org.bkd.social_media_scheduler_api.oauth2.frameworks.PlatformProperties;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
@@ -16,10 +16,10 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClient;
 
 import java.time.Instant;
-import java.util.Map;
 import java.util.UUID;
 
-import static org.springframework.util.StringUtils.hasText;
+import static java.time.Instant.now;
+import static java.util.UUID.randomUUID;
 
 @Slf4j
 @Service
@@ -28,7 +28,9 @@ public class TiktokTokenManager implements TokenManager {
 
   private final static RestClient restClient = RestClient.create();
 
-  private final PlatformsProperties platformsProperties;
+  private final PlatformProperties platformProperties;
+
+  private final ProfileService profileService;
 
 
   @Override
@@ -37,75 +39,60 @@ public class TiktokTokenManager implements TokenManager {
   }
 
   @Override
-  public Token exchangeCodeForToken(String code, String scopes, String state, UUID applicationId) throws
-                                                                                                  TokenExchangeException {
-
-    MultiValueMap<String, String> body = buildRequestBody(code);
-    Map<String, Object> response = performRequest(body);
-    return buildOAuth2Token(response, applicationId);
-
+  public Token exchangeCodeForToken(String code, UUID applicationId) throws TokenExchangeException {
+    try {
+      MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
+      body.add("client_key", platformProperties.getTiktok().clientId());
+      body.add("client_secret", platformProperties.getTiktok().clientSecret());
+      body.add("code", code);
+      body.add("grant_type", platformProperties.getTiktok().grantType());
+      body.add("redirect_uri", platformProperties.getTiktok().redirectUri());
+      return performRequest(body, applicationId);
+    } catch (Exception e) {
+      String errorMsg = "An error occurred while trying to exchange the code for the token";
+      log.error(errorMsg, e);
+      throw new TokenExchangeException(errorMsg);
+    }
   }
 
-  private Token buildOAuth2Token(Map<String, Object> response, UUID applicationId) throws TokenExchangeException {
-
-    String openId = (String) response.get("open_id");
-    String scope = (String) response.get("scope");
-    String accessToken = (String) response.get("access_token");
-    String refreshToken = (String) response.get("refresh_token");
-    Integer accessTokenExpiresInSeconds = (Integer) response.get("expires_in");
-    Integer refreshExpiresInSeconds = (Integer) response.get("refresh_expires_in");
-    String tokenType = (String) response.get("token_type");
-    String error = (String) response.get("error");
-    String errorDescription = (String) response.get("error_description");
-
-    if (hasText(error)) {
-      throw new TokenExchangeException(errorDescription);
+  @Override
+  public Token refreshToken(String refreshToken, UUID applicationId) throws TokenExchangeException {
+    try {
+      MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
+      body.add("client_key", platformProperties.getTiktok().clientId());
+      body.add("client_secret", platformProperties.getTiktok().clientSecret());
+      body.add("grant_type", "refresh_token");
+      body.add("refresh_token", refreshToken);
+      return performRequest(body, applicationId);
+    } catch (Exception e) {
+      String errorMsg = "An error occurred while trying to refresh the token";
+      log.error(errorMsg, e);
+      throw new TokenExchangeException(errorMsg);
     }
+  }
 
-    Instant now = Instant.now();
+  private Token performRequest(MultiValueMap<String, String> body, UUID applicationId) {
+    TiktokTokenResponse response = restClient.post()
+                                             .uri(platformProperties.getTiktok().tokenUri())
+                                             .body(body)
+                                             .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                                             .retrieve()
+                                             .body(TiktokTokenResponse.class);
 
-    return new Token(openId,
-                     scope,
-                     accessToken,
-                     refreshToken,
-                     now.plusSeconds(accessTokenExpiresInSeconds),
-                     now.plusSeconds(refreshExpiresInSeconds),
-                     tokenType,
+    Instant now = now();
+
+    return new Token(randomUUID(),
+                     response.getOpenId(),
+                     response.getScope(),
+                     response.getAccessToken(),
+                     response.getRefreshToken(),
+                     now.plusSeconds(response.getExpiresIn()),
+                     now.plusSeconds(response.getRefreshExpiresIn()),
+                     response.getTokenType(),
                      Platform.tiktok,
+                     null,
+                     null,
                      applicationId);
   }
 
-  private Map<String, Object> performRequest(MultiValueMap<String, String> body) throws TokenExchangeException {
-
-    try {
-      org.bkd.social_media_scheduler_api.oauth2.frameworks.Platform properties = getProperties();
-      String uri = properties.tokenUri().endsWith("/") ? properties.tokenUri() : properties.tokenUri() + "/";
-
-      return restClient.post()
-                       .uri(uri)
-                       .body(body)
-                       .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                       .retrieve()
-                       .body(new ParameterizedTypeReference<Map<String, Object>>() {
-                       });
-
-    } catch (Exception e) {
-      throw new TokenExchangeException("An error occurred while exchanging tokens with tiktok server");
-    }
-  }
-
-  private MultiValueMap<String, String> buildRequestBody(String code) {
-    org.bkd.social_media_scheduler_api.oauth2.frameworks.Platform properties = getProperties();
-    MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
-    body.add("client_key", properties.clientId());
-    body.add("client_secret", properties.clientSecret());
-    body.add("code", code);
-    body.add("grant_type", properties.grantType());
-    body.add("redirect_uri", properties.redirectUri());
-    return body;
-  }
-
-  private org.bkd.social_media_scheduler_api.oauth2.frameworks.Platform getProperties() {
-    return platformsProperties.getTiktok();
-  }
 }

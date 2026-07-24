@@ -15,10 +15,7 @@ public class CreateApplicationService implements CreateApplicationUseCase {
 
   @Override
   public Application createApplication(String name, String description) {
-    Application application = new Application();
-    application.setId(randomUUID());
-    application.setName(name);
-    application.setDescription(description);
+    Application application = new Application(randomUUID(), name, description);
     return applicationRepository.save(application);
   }
 }

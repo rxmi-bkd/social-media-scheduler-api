@@ -1,5 +1,6 @@
 package org.bkd.social_media_scheduler_api.oauth2.domains.token;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
@@ -9,6 +10,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class Token {
 
   private UUID id;
@@ -29,7 +31,9 @@ public class Token {
 
   private Platform platform;
 
-  private Instant createdAt;
+  private String displayName;
+
+  private String avatarUrl;
 
   private UUID applicationId;
 

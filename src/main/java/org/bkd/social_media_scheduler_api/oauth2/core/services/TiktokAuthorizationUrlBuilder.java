@@ -9,7 +9,11 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class TiktokAuthorizationUrlBuilder implements AuthorizationUrlBuilder {
 
-  private final org.bkd.social_media_scheduler_api.oauth2.frameworks.Platform properties;
+  private final String authorizationUri;
+  private final String clientId;
+  private final String responseType;
+  private final String scope;
+  private final String redirectUri;
 
   @Override
   public boolean supports(Platform platform) {
@@ -18,12 +22,10 @@ public class TiktokAuthorizationUrlBuilder implements AuthorizationUrlBuilder {
 
   @Override
   public String buildAuthorizationUrl(UUID applicationId) {
-    return String.format(
-        properties.authorizationUri() + "?client_key=%s&response_type=%s&scope=%s&redirect_uri=%s",
-        properties.clientId(),
-        properties.responseType(),
-        properties.scope(),
-        properties.redirectUri()
-    );
+    return String.format(authorizationUri + "?client_key=%s&response_type=%s&scope=%s&redirect_uri=%s",
+                         clientId,
+                         responseType,
+                         scope,
+                         redirectUri);
   }
 }

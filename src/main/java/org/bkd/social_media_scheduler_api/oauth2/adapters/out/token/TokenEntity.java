@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
-@Entity(name = "oauth2_token")
+@Entity
 public class TokenEntity {
 
   @Id
@@ -44,7 +44,10 @@ public class TokenEntity {
   private Platform platform;
 
   @Column(nullable = false)
-  private Instant createdAt;
+  private String displayName;
+
+  @Column(nullable = false)
+  private String avatarUrl;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(nullable = false)

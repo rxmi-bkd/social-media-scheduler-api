@@ -7,6 +7,7 @@ import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.HandleCallbackUse
 import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.InitiateOAuth2UseCase;
 import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
 import org.bkd.social_media_scheduler_api.oauth2.domains.platform.UnsupportedPlatformException;
+import org.bkd.social_media_scheduler_api.oauth2.domains.profile.ProfileRetrievalException;
 import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateExpiredException;
 import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateNotFoundException;
 import org.bkd.social_media_scheduler_api.oauth2.domains.token.TokenExchangeException;
@@ -68,7 +69,7 @@ public class OAuth2RestController {
       oAuthCallbackHandler.handleOAuth2Callback(code, scopes, state, platform, applicationId);
     } catch (UnsupportedPlatformException | StateNotFoundException | StateExpiredException e) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-    } catch (TokenExchangeException e) {
+    } catch (TokenExchangeException | ProfileRetrievalException e) {
       throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
     }
   }

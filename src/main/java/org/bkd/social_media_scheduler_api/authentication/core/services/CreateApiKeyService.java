@@ -19,11 +19,7 @@ public class CreateApiKeyService implements CreateApiKeyUseCase {
 
   @Override
   public ApiKey createApiKey(UUID applicationId) {
-    ApiKey apiKey = new ApiKey();
-    apiKey.setId(randomUUID());
-    apiKey.setRole(USER);
-    apiKey.setValue(generateApiKeyValue());
-    apiKey.setApplicationId(applicationId);
+    ApiKey apiKey = new ApiKey(randomUUID(), USER, generateApiKeyValue(), applicationId);
     apiKey = apiKeyRepository.save(apiKey);
     return apiKey;
   }

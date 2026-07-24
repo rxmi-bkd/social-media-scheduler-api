@@ -11,11 +11,7 @@ public interface TokenManager {
 
   boolean supports(Platform platform);
 
-  Token exchangeCodeForToken(
-      String code,
-      String scopes,
-      String state,
-      UUID applicationId
-  )
-  throws TokenExchangeException;
+  Token exchangeCodeForToken(String code, UUID applicationId) throws TokenExchangeException;
+
+  Token refreshToken(String refreshToken, UUID applicationId) throws TokenExchangeException;
 }

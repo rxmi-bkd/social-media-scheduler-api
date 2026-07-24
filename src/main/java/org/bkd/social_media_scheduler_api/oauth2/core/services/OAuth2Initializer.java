@@ -44,26 +44,15 @@ public class OAuth2Initializer implements InitiateOAuth2UseCase {
 
     // State is used for CSRF protection. It will be checked during callback.
     // We also send application ID in order to track which application initiated the OAuth2 flow
-    State state = buildState(applicationId);
+    State state = new State(randomUUID(), generateState(), now(), applicationId);
     stateRepository.save(state);
 
-    return authorizationUrl + "&state=" + String.join(STATE_SEPARATOR,
-                                                      state.getValue(),
-                                                      applicationId.toString());
+    return authorizationUrl + "&state=" + String.join(STATE_SEPARATOR, state.getValue(), applicationId.toString());
   }
 
   private String generateState() {
     byte[] randomBytes = new byte[32];
     new SecureRandom().nextBytes(randomBytes);
     return Base64.getUrlEncoder().withoutPadding().encodeToString(randomBytes);
-  }
-
-  private State buildState(UUID applicationId) {
-    State state = new State();
-    state.setId(randomUUID());
-    state.setValue(generateState());
-    state.setCreatedAt(now());
-    state.setApplicationId(applicationId);
-    return state;
   }
 }

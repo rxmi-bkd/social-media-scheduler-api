@@ -1,5 +1,6 @@
 package org.bkd.social_media_scheduler_api.oauth2.domains.state;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class State {
 
   public final static String STATE_SEPARATOR = "~";
