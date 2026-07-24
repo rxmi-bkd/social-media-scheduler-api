@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static org.bkd.social_media_scheduler_api.security.SecurityConfiguration.ADMIN_BASE_PATH;
+import static org.bkd.social_media_scheduler_api.authentication.frameworks.SecurityConfiguration.ADMIN_BASE_PATH;
 
 @RestController
 @RequiredArgsConstructor

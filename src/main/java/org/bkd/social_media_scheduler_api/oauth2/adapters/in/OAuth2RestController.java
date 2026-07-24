@@ -9,7 +9,7 @@ import org.bkd.social_media_scheduler_api.oauth2.domains.platform.UnsupportedPla
 import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateExpiredException;
 import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateNotFoundException;
 import org.bkd.social_media_scheduler_api.oauth2.domains.token.TokenExchangeException;
-import org.bkd.social_media_scheduler_api.security.TenantContext;
+import org.bkd.social_media_scheduler_api.authentication.frameworks.TenantContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +19,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.UUID;
 
 import static org.bkd.social_media_scheduler_api.oauth2.core.services.OAuth2Utils.OAUTH2_STATE_SEPARATOR;
-import static org.bkd.social_media_scheduler_api.security.SecurityConfiguration.BASE_PATH;
+import static org.bkd.social_media_scheduler_api.authentication.frameworks.SecurityConfiguration.BASE_PATH;
 
 @RestController
 @RequiredArgsConstructor
