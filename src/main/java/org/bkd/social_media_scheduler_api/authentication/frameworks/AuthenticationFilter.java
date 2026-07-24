@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.bkd.social_media_scheduler_api.authentication.core.ports.in.ReadApiKeyUseCase;
 import org.bkd.social_media_scheduler_api.authentication.domains.ApiKey;
 import org.bkd.social_media_scheduler_api.authentication.domains.ApiKeyNotFoundException;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
@@ -19,6 +20,7 @@ import java.util.UUID;
 import static org.springframework.util.StringUtils.hasText;
 
 
+@Order(1)
 @Component
 @RequiredArgsConstructor
 public class AuthenticationFilter extends OncePerRequestFilter {
@@ -41,36 +43,10 @@ public class AuthenticationFilter extends OncePerRequestFilter {
       ApiKey apiKey_ = apiKeyReadService.readApiKey(apiKey, tenant);
       AuthenticationContext.setAuthentication(apiKey_);
       filterChain.doFilter(request, response);
-    } catch (IllegalArgumentException | NullPointerException e) {
-      response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
-    } catch (ApiKeyNotFoundException e) {
+    } catch (MissingCredentialsException | ApiKeyNotFoundException | BadCredentialsException e) {
       response.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
     } finally {
       AuthenticationContext.clear();
-    }
-  }
-
-  private String extractApiKeyFromHeaders(HttpServletRequest request) {
-    String apiKey = request.getHeader(API_KEY_HEADER);
-
-    if (!hasText(apiKey)) {
-      throw new NullPointerException("API key is null or empty");
-    }
-
-    return apiKey;
-  }
-
-  private UUID extractTenantFromHeaders(HttpServletRequest request) {
-    String tenant = request.getHeader(TENANT_HEADER);
-
-    if (!hasText(tenant)) {
-      throw new NullPointerException("Tenant is null or empty");
-    }
-
-    try {
-      return UUID.fromString(tenant);
-    } catch (IllegalArgumentException e) {
-      throw new IllegalArgumentException("Tenant ID is not a valid UUID");
     }
   }
 
@@ -78,5 +54,31 @@ public class AuthenticationFilter extends OncePerRequestFilter {
   protected boolean shouldNotFilter(HttpServletRequest request) {
     String uri = request.getRequestURI();
     return pathMatcher.match("/api/login/oauth/code/**", uri);
+  }
+
+  private String extractApiKeyFromHeaders(HttpServletRequest request) throws MissingCredentialsException {
+    String apiKey = request.getHeader(API_KEY_HEADER);
+
+    if (!hasText(apiKey)) {
+      throw new MissingCredentialsException();
+    }
+
+    return apiKey;
+  }
+
+  private UUID extractTenantFromHeaders(HttpServletRequest request) throws
+                                                                    MissingCredentialsException,
+                                                                    BadCredentialsException {
+    String tenant = request.getHeader(TENANT_HEADER);
+
+    if (!hasText(tenant)) {
+      throw new MissingCredentialsException();
+    }
+
+    try {
+      return UUID.fromString(tenant);
+    } catch (IllegalArgumentException e) {
+      throw new BadCredentialsException();
+    }
   }
 }

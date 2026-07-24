@@ -10,20 +10,12 @@ import java.util.UUID;
 @Setter
 public class State {
 
+  public final static String STATE_SEPARATOR = "~";
+
   private UUID id;
-
   private String value;
-
   private Instant createdAt;
-
   private UUID applicationId;
-
-  public State(String value, UUID applicationId) {
-    this.id = UUID.randomUUID();
-    this.value = value;
-    this.createdAt = Instant.now();
-    this.applicationId = applicationId;
-  }
 
   /**
    * true if state is younger than 5 mins else false

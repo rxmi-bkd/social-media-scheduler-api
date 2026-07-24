@@ -5,7 +5,12 @@ import org.bkd.social_media_scheduler_api.authentication.core.ports.in.CreateApi
 import org.bkd.social_media_scheduler_api.authentication.core.ports.out.ApiKeyRepository;
 import org.bkd.social_media_scheduler_api.authentication.domains.ApiKey;
 
+import java.security.SecureRandom;
+import java.util.Base64;
 import java.util.UUID;
+
+import static java.util.UUID.randomUUID;
+import static org.bkd.social_media_scheduler_api.authentication.domains.Role.USER;
 
 @RequiredArgsConstructor
 public class CreateApiKeyService implements CreateApiKeyUseCase {
@@ -14,8 +19,20 @@ public class CreateApiKeyService implements CreateApiKeyUseCase {
 
   @Override
   public ApiKey createApiKey(UUID applicationId) {
-    ApiKey apiKey = new ApiKey(applicationId);
+    ApiKey apiKey = new ApiKey();
+    apiKey.setId(randomUUID());
+    apiKey.setRole(USER);
+    apiKey.setValue(generateApiKeyValue());
+    apiKey.setApplicationId(applicationId);
     apiKey = apiKeyRepository.save(apiKey);
     return apiKey;
   }
+
+  private String generateApiKeyValue() {
+    byte[] randomBytes = new byte[32];
+    SecureRandom secureRandom = new SecureRandom();
+    secureRandom.nextBytes(randomBytes);
+    return Base64.getUrlEncoder().withoutPadding().encodeToString(randomBytes);
+  }
+
 }

@@ -13,7 +13,9 @@ import java.util.Base64;
 import java.util.List;
 import java.util.UUID;
 
-import static org.bkd.social_media_scheduler_api.oauth2.core.services.OAuth2Utils.OAUTH2_STATE_SEPARATOR;
+import static java.time.Instant.now;
+import static java.util.UUID.randomUUID;
+import static org.bkd.social_media_scheduler_api.oauth2.domains.state.State.STATE_SEPARATOR;
 
 @RequiredArgsConstructor
 public class OAuth2Initializer implements InitiateOAuth2UseCase {
@@ -42,16 +44,26 @@ public class OAuth2Initializer implements InitiateOAuth2UseCase {
 
     // State is used for CSRF protection. It will be checked during callback.
     // We also send application ID in order to track which application initiated the OAuth2 flow
-    String state = generateState();
-    State oAuth2State = new State(state, applicationId);
-    stateRepository.save(oAuth2State);
+    State state = buildState(applicationId);
+    stateRepository.save(state);
 
-    return authorizationUrl + "&state=" + String.join(OAUTH2_STATE_SEPARATOR, state, applicationId.toString());
+    return authorizationUrl + "&state=" + String.join(STATE_SEPARATOR,
+                                                      state.getValue(),
+                                                      applicationId.toString());
   }
 
   private String generateState() {
     byte[] randomBytes = new byte[32];
     new SecureRandom().nextBytes(randomBytes);
     return Base64.getUrlEncoder().withoutPadding().encodeToString(randomBytes);
+  }
+
+  private State buildState(UUID applicationId) {
+    State state = new State();
+    state.setId(randomUUID());
+    state.setValue(generateState());
+    state.setCreatedAt(now());
+    state.setApplicationId(applicationId);
+    return state;
   }
 }

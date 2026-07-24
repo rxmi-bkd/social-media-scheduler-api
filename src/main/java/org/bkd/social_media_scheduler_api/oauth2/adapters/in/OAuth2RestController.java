@@ -2,6 +2,7 @@ package org.bkd.social_media_scheduler_api.oauth2.adapters.in;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.bkd.social_media_scheduler_api.authentication.frameworks.TenantContext;
 import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.HandleCallbackUseCase;
 import org.bkd.social_media_scheduler_api.oauth2.core.ports.in.InitiateOAuth2UseCase;
 import org.bkd.social_media_scheduler_api.oauth2.domains.platform.Platform;
@@ -9,7 +10,6 @@ import org.bkd.social_media_scheduler_api.oauth2.domains.platform.UnsupportedPla
 import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateExpiredException;
 import org.bkd.social_media_scheduler_api.oauth2.domains.state.StateNotFoundException;
 import org.bkd.social_media_scheduler_api.oauth2.domains.token.TokenExchangeException;
-import org.bkd.social_media_scheduler_api.authentication.frameworks.TenantContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,8 +18,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.UUID;
 
-import static org.bkd.social_media_scheduler_api.oauth2.core.services.OAuth2Utils.OAUTH2_STATE_SEPARATOR;
 import static org.bkd.social_media_scheduler_api.authentication.frameworks.SecurityConfiguration.BASE_PATH;
+import static org.bkd.social_media_scheduler_api.oauth2.domains.state.State.STATE_SEPARATOR;
 
 @RestController
 @RequiredArgsConstructor
@@ -75,7 +75,7 @@ public class OAuth2RestController {
 
   private UUID extractApplicationIdFromState(String state) {
     try {
-      String applicationId = state.split(OAUTH2_STATE_SEPARATOR)[1];
+      String applicationId = state.split(STATE_SEPARATOR)[1];
       return UUID.fromString(applicationId);
     } catch (IllegalArgumentException | ArrayIndexOutOfBoundsException e) {
       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "State is invalid");
@@ -83,7 +83,7 @@ public class OAuth2RestController {
   }
 
   private String removeApplicationIdFromState(String state) {
-    return state.split(OAUTH2_STATE_SEPARATOR)[0];
+    return state.split(STATE_SEPARATOR)[0];
   }
 
   private String extractFromRequest(HttpServletRequest request, String key) {

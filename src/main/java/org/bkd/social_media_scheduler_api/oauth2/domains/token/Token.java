@@ -33,29 +33,6 @@ public class Token {
 
   private UUID applicationId;
 
-  public Token(String openId,
-               String scope,
-               String accessToken,
-               String refreshToken,
-               Instant accessTokenExpiresAt,
-               Instant refreshTokenExpiresAt,
-               String tokenType,
-               Platform platform,
-               UUID applicationId) {
-
-    this.id = UUID.randomUUID();
-    this.openId = openId;
-    this.scope = scope;
-    this.accessToken = accessToken;
-    this.refreshToken = refreshToken;
-    this.accessTokenExpiresAt = accessTokenExpiresAt;
-    this.refreshTokenExpiresAt = refreshTokenExpiresAt;
-    this.tokenType = tokenType;
-    this.platform = platform;
-    this.createdAt = Instant.now();
-    this.applicationId = applicationId;
-  }
-
   /**
    * true if access token is still valid else false
    */

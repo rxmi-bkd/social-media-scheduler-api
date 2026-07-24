@@ -14,10 +14,4 @@ public class Application {
   private String name;
 
   private String description;
-
-  public Application(String name, String description) {
-    this.id = UUID.randomUUID();
-    this.name = name;
-    this.description = description;
-  }
 }
